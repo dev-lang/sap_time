@@ -5,4 +5,5 @@ no default co. address has been maint. in the system. create an address:
 no role:
 
 #create a new role in PFCG transaction code (needed for automatic creation of users)
+#You will need to run SU25 transaction before creating a new role in order to allow instance to process auth
 #THIS WILL BE AUTOMATED WITH SAP SCRIPTING
