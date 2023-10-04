@@ -13,4 +13,7 @@ https://success.panaya.com/docs/how-to-set-server-parameters-to-enable-gui-scrip
 
 ref:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
+
 https://aancos.com/2017/05/12/sap-gui-for-windows-7-50/
+
+unzip para SAP_ECC6_EHP6_Source: https://sourceforge.net/projects/gnuwin32/files/unzip/5.51-1/unzip-5.51-1-bin.zip/download?use_mirror=sitsa&download=
