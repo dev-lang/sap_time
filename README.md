@@ -7,6 +7,17 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+## password
+
+Es importante generar una clave segura tanto para mantener el sistema seguro como para que la instalación sea correcta en todo el proceso.
+En cuanto el instalador requiera establecer una contraseña a los usuarios que se crean y se encuentre con la limitación de haber elegido
+una clave que no cumple con los requisitos, puede encontrarse con un error que impida continuar.
+
+ESET Password Generator: https://www.eset.com/int/password-generator/<br>
+Secure Password Generator: https://passwordsgenerator.net/old.php
+
+**RECORDAR LA CLAVE YA QUE SERÁ REQUERIDA PARA LA ADMINISTRACIÓN DEL SISTEMA SAP**
+
 ## Unable to find a database software package at x:\x\SAP ASE DB.
 
 Se requiere utilizar el archivo ASEBS16003P_14-10013281.SAR para el paso. 
@@ -30,6 +41,13 @@ donde el x/xx indica el número que debe ser idéntico al solicitado. En los pri
 en el tercer paso requiere (en la prueba realizada) que se pongan en el siguiente orden:
 
 ![image](https://github.com/dev-lang/sap_time/assets/56205122/01c118cd-90a6-46ea-a832-54909d07d308)
+
+## Microsoft C++ Runtimes 2012 Update 4
+
+Durante el proceso de instalación puede ocurrir el siguiente error, que indica que nos faltan instalar unas runtimes en el sistema para poder continuar.
+Podemos bajarlo desde: https://archive.org/download/visual-c-redistributable-for-visual-studio-2012-update-4/Visual%20C%2B%2B%20Redistributable%20for%20Visual%20Studio%202012%20Update%204.zip/vcredist_x64.exe para instalarlo y continuar con el proceso.
+
+![image](https://github.com/dev-lang/sap_time/assets/56205122/b9d60505-6f76-4366-9a42-498830192214)
 
 
 ## PORT FORWARDING (solo NAT)
