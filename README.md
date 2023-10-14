@@ -7,6 +7,18 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+## log-off
+
+En el primer paso de instalación, se solicitará al usuario que cierre su sesión.
+En caso de fallar se requiere que se cambien las siguientes configuraciones (secpol.msc):
+
+**Act as part of the operating system, Increase quotas and Replace a process level token.**
+
+En primera instancia, con que el usuario que usamos para instalar se encuentre en esas configuraciones,
+es suficiente para permitir la instalación.
+Puede ser que "Increase quotas" no se encuentre en windows server 2019
+
+
 ## password
 
 Es importante generar una clave segura tanto para mantener el sistema seguro como para que la instalación sea correcta en todo el proceso.
@@ -41,6 +53,12 @@ donde el x/xx indica el número que debe ser idéntico al solicitado. En los pri
 en el tercer paso requiere (en la prueba realizada) que se pongan en el siguiente orden:
 
 ![image](https://github.com/dev-lang/sap_time/assets/56205122/01c118cd-90a6-46ea-a832-54909d07d308)
+
+nota: el ejemplo de arriba obvia el export 2 debido a que fue cargado anteriormente
+si respetamos la solicitud cargando 1 y 11 debería ser así:
+![image](https://github.com/dev-lang/sap_time/assets/56205122/67851d85-781d-4609-9970-b869210b5e08)
+
+Una vez iniciado el proceso, el SPM comenzará a verificar todos los archivos
 
 ## Microsoft C++ Runtimes 2012 Update 4
 
