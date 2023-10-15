@@ -6,6 +6,9 @@ Rename-Computer -NewName $ComputerName -Force
 # Mostrar extensiones de archivo
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Value 0
 
+# Mostrar ocultos y archivos del sistema
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSuperHidden" -Value 1
+
 # Memoria Virtual (swap)
 $PageFileSizeMB = 20500
 
