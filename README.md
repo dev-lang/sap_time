@@ -7,6 +7,15 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+## UAC
+
+Es requerida la desactivación para la instalación de ECC6 EHP6 bajo Windows 2016<br>
+Se ha incluido el script 2016_DISABLE-UAC_EHP6.ps1 para tal tarea<br>
+La alternativa es el siguiente código pero requiere reinicio manual:<br>
+
+```Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name 'EnableLUA' -Value 0```
+
+
 ## log-off
 
 En el primer paso de instalación, se solicitará al usuario que cierre su sesión.
