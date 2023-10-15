@@ -7,6 +7,19 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+## Windows Server 2008 R2 - KB3004394 Obligatoria
+
+Es requerida la actualización KB3004394 (https://support.microsoft.com/en-us/topic/support-for-urgent-trusted-root-updates-for-windows-root-certificate-program-in-windows-a4ac4d6c-7c62-3b6e-dfd2-377982bf3ea5)
+para poder instalar los NTPATCH que se requieren en el proceso de instalación.
+
+
+![image](https://github.com/dev-lang/sap_time/assets/56205122/46fb792a-0263-4c98-9086-3c9325971361)
+
+podemos comprobar esto al intentar instalar manualmente tanto el vcredist como alguna update de windows y nos salga el siguiente mensaje:
+![image](https://github.com/dev-lang/sap_time/assets/56205122/51c1013c-539b-4e84-864c-e5b4372a60d5)
+
+Una vez instalada la update, reiniciar el sistema y continuar el proceso.
+
 ## UAC
 
 Es requerida la desactivación para la instalación de ECC6 EHP6 bajo Windows 2016<br>
