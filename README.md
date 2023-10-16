@@ -91,6 +91,8 @@ por ejemplo:
 
 **El SPM se encargará de buscarlos dentro de la carpeta DATA_UNITS**
 
+<img width="1192" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/b288ec1e-e206-47b6-b277-727efbf41b1e">
+
 
 ## Microsoft C++ Runtimes 2012 Update 4
 
