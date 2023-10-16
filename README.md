@@ -126,6 +126,28 @@ Para el resto de los servicios se deberá hacer lo mismo
 NOTA: Es recomendable usar un puente en lugar de NAT, si se utiliza una máquina host diferente al cliente 
 o si se desea permitir varios clientes o que la vm tome el dominio (p.e: sapprd.dominio.com.ar)
 
+## Instalación completa
+
+Una vez finalizada la instalación, aparecerá el siguiente mensaje:
+<img width="965" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8fb4e805-5d66-43fb-9b62-37efbe6256d2">
+
+Al continuar y finalizar, aparecerá esto despues de darle click a "OK"
+haremos click en Close y cerraremos el navegador
+<img width="958" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c4d1278b-c830-493f-bb40-3a80bc5c75e0">
+
+Al ingresar al SAP Management Console (sapmmc.msc) deberemos ver algo de la siguiente forma:<BR>
+<img width="247" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4e469ce5-3fa6-4a83-989d-564e6da9374b">
+
+## IPV4 
+
+En caso de tener la VM configurada como red puente en lugar de NAT, deberemos usar o bien la IPV4 o bien desactivar la IPV6
+en la máquina virtual para permitir que SAPGUI pueda comunicarse al servidor
+
+Una vez configurado, setearemos la entrada en SAPGUI e ingresaremos para comprobar que nos podemos comunicar al servidor:
+
+<img width="575" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/40512319-79c4-4c4a-b2be-fd98c1d699bf">
+
+
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
 Las vms creadas desde los instaladores TRIAL ofrecidos por SAP, deberan crear una licencia tanto para ampliar el tiempo
