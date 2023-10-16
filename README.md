@@ -82,6 +82,16 @@ si respetamos la solicitud cargando 1 y 11 debería ser así:
 
 Una vez iniciado el proceso, el SPM comenzará a verificar todos los archivos
 
+## Selección de exports (automática)
+
+En lugar de establecer la ruta de cada carpeta, podremos en el paso 1 o 2, decirle que los busque en la carpeta 51050708
+
+por ejemplo:
+```E:\ECC6 EHP8\ECC6 EHP8 Exports\51050708\```
+
+**El SPM se encargará de buscarlos dentro de la carpeta DATA_UNITS**
+
+
 ## Microsoft C++ Runtimes 2012 Update 4
 
 Durante el proceso de instalación puede ocurrir el siguiente error, que indica que nos faltan instalar unas runtimes en el sistema para poder continuar.
