@@ -147,6 +147,17 @@ Una vez configurado, setearemos la entrada en SAPGUI e ingresaremos para comprob
 
 <img width="575" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/40512319-79c4-4c4a-b2be-fd98c1d699bf">
 
+## CPU timers not synchronized. Check note 1036194
+
+<img width="660" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/daea5d02-5d3c-4d81-8b7a-5bf82fbd1d31">
+
+En el primer inicio, nos puede salir un error de ABAP que nos pida que ejecutemos la transacción SICK
+al ejecutarla nos advierte que debemos solucionar el problema antes de usar el servidor y nos da un error como
+"CPU timers not synchronized. Check note 1036194"
+
+El problema puede ser solucionado si entramos al SAP Management Console y reiniciamos la instancia completa de SAP
+
+Si en el futuro necesitamos acceder al error que figuró, podremos ejecutar la transacción ST22 
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
