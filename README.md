@@ -15,10 +15,23 @@ para poder instalar los NTPATCH que se requieren en el proceso de instalación.
 
 ![image](https://github.com/dev-lang/sap_time/assets/56205122/46fb792a-0263-4c98-9086-3c9325971361)
 
-podemos comprobar esto al intentar instalar manualmente tanto el vcredist como alguna update de windows y nos salga el siguiente mensaje:
-![image](https://github.com/dev-lang/sap_time/assets/56205122/51c1013c-539b-4e84-864c-e5b4372a60d5)
+podemos comprobar esto al intentar instalar manualmente tanto el vcredist como alguna update de windows y nos salga el siguiente mensaje:<br>
+![image](https://github.com/dev-lang/sap_time/assets/56205122/51c1013c-539b-4e84-864c-e5b4372a60d5)<br>
 
 Una vez instalada la update, reiniciar el sistema y continuar el proceso.
+
+## [CRITICO] Instance XXX/D00 reached state SHUTDOWN after having state STARTING. Giving Up
+
+Durante el proceso de instalación, en la etapa de start instance, nos puede salir un error que figura que no ha podido iniciarse
+la instancia de sap requerida
+
+![image](https://github.com/dev-lang/sap_time/assets/56205122/91f06e78-6663-4e8a-92f5-959fba630ac6)
+
+Si ingresamos al "SAP Management Console" podremos ver el status de las process list de cada instancia. 
+En caso de que se encuentren en "STARTING" podremos hacer click en "Retry" para que el proceso de instalación continúe.
+
+Este problema puede deberse a una falta de memoria por lo que aumentar la RAM asignada a la VM parece solucionar el problema
+Recomendado: asignar por lo menos 10127MB de memoria.
 
 ## UAC
 
