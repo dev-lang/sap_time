@@ -156,6 +156,9 @@ al ejecutarla nos advierte que debemos solucionar el problema antes de usar el s
 "CPU timers not synchronized. Check note 1036194"
 
 El problema puede ser solucionado si entramos al SAP Management Console y reiniciamos la instancia completa de SAP
+En caso de no quedar persistente ejecutar el siguiente comando en cmd y reiniciar:
+
+```bcdedit /set {current} useplatformclock true```
 
 Si en el futuro necesitamos acceder al error que figuró, podremos ejecutar la transacción ST22 
 
