@@ -147,6 +147,14 @@ Una vez configurado, setearemos la entrada en SAPGUI e ingresaremos para comprob
 
 <img width="575" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/40512319-79c4-4c4a-b2be-fd98c1d699bf">
 
+## Resource temporarily unavailable (partner x:3200 not reached)
+
+En caso de reiniciar el servidor, es posible que tenga que ejecutar de nuevo el .ps1 para abrir los puertos asignados a sapgui
+(incluso tras cambiar de NAT a Adaptador Puente)
+
+En caso de haber desactivado el ipv6 se debe usar el hostname para comunicarse, o dominio completo en caso de que el router haya
+asignado de esa forma la comunicación.
+
 ## CPU timers not synchronized. Check note 1036194
 
 <img width="660" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/daea5d02-5d3c-4d81-8b7a-5bf82fbd1d31">
