@@ -170,6 +170,19 @@ En caso de no quedar persistente ejecutar el siguiente comando en cmd y reinicia
 
 Si en el futuro necesitamos acceder al error que figuró, podremos ejecutar la transacción ST22 
 
+## A RAISE statement in program "CL_GUI_HTML_VIEWER============CP" has raised exception condition "CNTL_ERROR".
+
+Este problema sucede al intentar ejecutar un comando de una transacción que requiera el uso del navegador de sistema
+pero no se puede realizar.<br>
+<img width="662" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/35e1a73e-a0f4-42ad-b03c-ce8e5ca73541"><br>
+
+Al no poder mostrar el contenido en el navegador, se realiza una excepción en el programa:<br>
+<img width="649" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/5e631b09-d5e4-4806-b263-ab7df94dc2bd"><br>
+
+La solución se encuentra investigando, puede deberse a una falta de instalación de Java en el sistema.
+
+
+
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
 Las vms creadas desde los instaladores TRIAL ofrecidos por SAP, deberan crear una licencia tanto para ampliar el tiempo
