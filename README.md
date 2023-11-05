@@ -74,8 +74,14 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 ## Linux SAP (Ubuntu 18.10):
 
 Seguir instrucciones de guía:
-https://blogs.sap.com/2022/11/14/sap-netweaver-as-abap-developer-edition-installation-pitfalls/
-Algunos pasos se encuentran parcialmente cubiertos en script Linux_Ubuntu-1810.sh (paso 5 a 8 incluyendo hostname)
+https://blogs.sap.com/2022/11/14/sap-netweaver-as-abap-developer-edition-installation-pitfalls/<BR>
+Algunos pasos se encuentran parcialmente cubiertos en script Linux_Ubuntu-1810.sh (paso 5 a 8 incluyendo hostname)<br>
+
+Ejecutar realizando:
+```
+chmod +x Linux_Ubuntu-1810.sh
+./Linux_Ubuntu-1810.sh
+```
 
 
 ## Windows Server 2008 R2 - KB3004394 Obligatoria
