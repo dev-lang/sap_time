@@ -13,10 +13,14 @@ scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-8000
 2. Ejecutar el preset correspondiente
 3. Verificar que se hayan instalado los pre-requisitos necesarios (puede requerirse un seteo de PATH en caso de instalar Java)
 4. Copiar los archivos de instalación en un disco aparte
-5. Copiar el archivo .bat correspondiente
-   (por ejemplo, para SAP ECC6 EHP8 bajo Win2012R2 se requiere una estructura así:
-   <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a">
+5. Copiar el archivo .bat correspondiente<br>
+   (por ejemplo, para SAP ECC6 EHP8 bajo Win2012R2 se requiere una estructura así:<br>
+   <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a"><br>
 6. Ejecutar .BAT y seguir las instrucciones y notas de este README
+
+En caso de requerir descargar el instalador de Java 2, usar el siguiente enlace (testeado con ECC6 EHP6): <br>
+https://archive.org/download/j2sdkfb-1_4_2_29-windows-amd64/j2sdkfb-1_4_2_29-windows-amd64.exe<br>
+Puede dar un error en la primera ejecución, pero después funciona correctamente. Después se requiere configurar los PATH del sistema<br>
 
 # CONFIGURACIONES EXITOSAS (DE VM):
 
