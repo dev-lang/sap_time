@@ -82,6 +82,7 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 | comp-readme.txt                  | Notas sobre el Código de la Compañía y PFCG                               |
 | byebyetimer.bat                  | Desactiva la configuración de hora y realiza varias configuraciones para SAP Netweaver en Windows Server 2003 |
 | Linux_Ubuntu-1810.sh             | Prepara sistema Linux para SAP (Script parcial) |
+| enable_rds.ps1                   | Habilita el uso de RDS para conexión remota al equipo |
 
 ## Linux SAP (Ubuntu 18.10):
 
