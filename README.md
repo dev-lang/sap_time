@@ -18,6 +18,40 @@ scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-8000
    <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a">
 6. Ejecutar .BAT y seguir las instrucciones y notas de este README
 
+# CONFIGURACIONES EXITOSAS (DE VM):
+
+Nota: tener en cuenta que la configuración de disco puede cambiar a nivel OS si se hacen discos dinámicos.
+Los datos son de referencia y puede ser que haya mejoras en una reconfiguración previa o posterior.
+
+## SAP ECC6 EHP6:
+
+| Configuración         | Detalles                       |
+|-----------------------|--------------------------------|
+| Sistema Operativo     | Windows Server 2016            |
+| RAM                   | 8192MB                         |
+| CPU                   | 2 Núcleos                      |
+| Tarjeta de Video      | VBoxSVGA (Sin 3D)               |
+| Memoria de Video      | 128MB                          |
+| Disco Principal       | 100GB VHD                      |
+| Disco Secundario      | 100GB VHD                      |
+| Disco Terciario       | 180GB VHD                      |
+| Configuración de Red  | NAT / Puente                   |
+
+## SAP ECC6 EHP8:
+
+| Configuración         | Detalles                       |
+|-----------------------|--------------------------------|
+| Sistema Operativo     | Windows Server 2012 R2         |
+| RAM                   | 10127MB                        |
+| CPU                   | 2 Núcleos                      |
+| Tarjeta de Video      | VBoxSVGA (3D)                   |
+| Memoria de Video      | 256MB                          |
+| Disco Principal       | 100GB VHD                      |
+| Disco Secundario      | 250GB VHD                      |
+| Disco Terciario       | 64GB VHD                       |
+| Configuración de Red  | NAT / Puente                   |
+
+
 
 # FILES:
 
