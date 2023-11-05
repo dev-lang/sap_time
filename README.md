@@ -7,6 +7,36 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+# NOTAS DE INSTALACIÓN:
+
+1. Se debe instalar el OS elegido (se ha probado Win2016 para ECC6 EHP6 y Win2012 R2 para ECC EHP8)
+2. Ejecutar el preset correspondiente
+3. Verificar que se hayan instalado los pre-requisitos necesarios (puede requerirse un seteo de PATH en caso de instalar Java)
+4. Copiar los archivos de instalación en un disco aparte
+5. Copiar el archivo .bat correspondiente
+   (por ejemplo, para SAP ECC6 EHP8 bajo Win2012R2 se requiere una estructura así:
+   <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a">
+6. Ejecutar .BAT y seguir las instrucciones y notas de este README
+
+
+# FILES:
+
+Descripción rápida de uso de cada archivo (no necesariamente se requiere el uso de todos por eso ver la tabla).
+
+| Nombre del Archivo               | Descripción                                                        |
+|---------------------------------|--------------------------------------------------------------------|
+| preset_machine.ps1               | Preconfigura la máquina con el nombre "sapsrv" y establece PageFile en 20500MB |
+| win2008_preset_machine.ps1        | [WIN2008] Preconfigura la máquina con nombre, muestra extensiones de archivos, establece PageFile y deshabilita UAC |
+| preset_all.ps1                   | Preconfigura el nombre del host, PageFile, muestra extensiones de archivos, abre el puerto TCP 3200 y deshabilita UAC |
+| ws2016_fw_rules.ps1              | Abre los puertos TCP 3200 entrantes y salientes en el cortafuegos      |
+| 2016_DISABLE_UAC_EHP6.ps1        | Deshabilita UAC en Windows Server 2016                                 |
+| SAP_ECC6_EHP6_Source.bat         | [WIN2016] Prepara la instalación para ECC6 EHP6                          |
+| ECC6_EHP8_ws2012.bat             | [WIN2012] Prepara la instalación de ECC6 EHP8 en Windows 2012           |
+| ECC6_EHP8.bat                    | Prepara la instalación de ECC6 EHP8                                      |
+| comp-readme.txt                  | Notas sobre el Código de la Compañía y PFCG                               |
+| byebyetimer.bat                  | Desactiva la configuración de hora y realiza varias configuraciones para SAP Netweaver en Windows Server 2003 |
+
+
 ## Windows Server 2008 R2 - KB3004394 Obligatoria
 
 Es requerida la actualización KB3004394 (https://support.microsoft.com/en-us/topic/support-for-urgent-trusted-root-updates-for-windows-root-certificate-program-in-windows-a4ac4d6c-7c62-3b6e-dfd2-377982bf3ea5)
