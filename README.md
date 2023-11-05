@@ -18,6 +18,11 @@ scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-8000
    <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a"><br>
 6. Ejecutar .BAT y seguir las instrucciones y notas de este README
 
+## Java is NOT ACTIVE (VM Container)
+
+Esta advertencia que podemos llegar a ver dentro del sapmmc.mmc es debido a que no se encuentra instalada
+Java en el sistema. Para ello deberemos instalar Java en el sistema. 
+
 En caso de requerir descargar el instalador de Java 2, usar el siguiente enlace (testeado con ECC6 EHP6): <br>
 https://archive.org/download/j2sdkfb-1_4_2_29-windows-amd64/j2sdkfb-1_4_2_29-windows-amd64.exe<br>
 Puede dar un error en la primera ejecución pero después funciona correctamente.<br>
