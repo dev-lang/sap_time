@@ -69,6 +69,13 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 | ECC6_EHP8.bat                    | Prepara la instalación de ECC6 EHP8                                      |
 | comp-readme.txt                  | Notas sobre el Código de la Compañía y PFCG                               |
 | byebyetimer.bat                  | Desactiva la configuración de hora y realiza varias configuraciones para SAP Netweaver en Windows Server 2003 |
+| Linux_Ubuntu-1810.sh             | Prepara sistema Linux para SAP (Script parcial) |
+
+## Linux SAP (Ubuntu 18.10):
+
+Seguir instrucciones de guía:
+https://blogs.sap.com/2022/11/14/sap-netweaver-as-abap-developer-edition-installation-pitfalls/
+Algunos pasos se encuentran parcialmente cubiertos en script Linux_Ubuntu-1810.sh (paso 5 a 8 incluyendo hostname)
 
 
 ## Windows Server 2008 R2 - KB3004394 Obligatoria
