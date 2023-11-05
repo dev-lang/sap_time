@@ -1,4 +1,4 @@
-EHP8 Exports"
+cd "ECC6 EHP8 Exports"
 start /wait 51050708_part1.exe /s
 del 51050708_part1.exe
 del *.rar
