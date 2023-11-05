@@ -20,7 +20,10 @@ scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-8000
 
 En caso de requerir descargar el instalador de Java 2, usar el siguiente enlace (testeado con ECC6 EHP6): <br>
 https://archive.org/download/j2sdkfb-1_4_2_29-windows-amd64/j2sdkfb-1_4_2_29-windows-amd64.exe<br>
-Puede dar un error en la primera ejecución, pero después funciona correctamente. Después se requiere configurar los PATH del sistema<br>
+Puede dar un error en la primera ejecución pero después funciona correctamente.<br>
+<img width="202" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/1300fb19-a781-423e-bb69-b6c77d93addc">
+
+Después se requiere configurar los PATH del sistema (se agregará un script .ps1)<br>
 
 # CONFIGURACIONES EXITOSAS (DE VM):
 
