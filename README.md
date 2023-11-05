@@ -232,6 +232,15 @@ En caso de reiniciar el servidor, es posible que tenga que ejecutar de nuevo el 
 En caso de haber desactivado el ipv6 se debe usar el hostname para comunicarse, o dominio completo en caso de que el router haya
 asignado de esa forma la comunicación.
 
+Se debería poder hacer persistente ejecutando esto despues del script (no probado)
+(puede requerir agregar un -Enabled True al script):
+
+```
+Set-NetFirewallRule -DisplayName "SAP Inbound" -Enabled True
+Set-NetFirewallRule -DisplayName "SAP Outbound" -Enabled True
+```
+
+
 ## CPU timers not synchronized. Check note 1036194
 
 <img width="660" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/daea5d02-5d3c-4d81-8b7a-5bf82fbd1d31">
