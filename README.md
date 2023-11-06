@@ -280,7 +280,7 @@ Al no poder mostrar el contenido en el navegador, se realiza una excepción en e
 
 La solución se encuentra investigando, puede deberse a una falta de instalación de Java en el sistema.
 
-## no default co. address has been maint. in the system. create an address:
+## [FIX] no default co. address has been maint. in the system. create an address:
 
 <img width="600" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f0eb7b4b-5eed-454d-ad72-b486c3b90d46">
 
@@ -312,8 +312,8 @@ En caso de querer asignar la dirección y no querer modificar los campos requeri
 Lo haremos a través de la transacción SU01:
 <img width="443" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/b23be335-872f-4530-95b4-1e3bdb566d29">
 
-Al copiar el usuario, nos saldrán advertencias similares a estas:
-<img width="631" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c8be65b4-044f-4ff7-a638-3a620aa23a99">
+Al copiar el usuario, nos saldrán advertencias similares a estas:<br>
+<img width="631" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c8be65b4-044f-4ff7-a638-3a620aa23a99"><br>
 
 Guardaremos el usuario, llenaremos apellido y nombre cuando nos requiera y asignaremos una compañía.
 Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Standard Adress":
