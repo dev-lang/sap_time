@@ -286,31 +286,31 @@ La solución se encuentra investigando, puede deberse a una falta de instalació
 
 ```comp-readme.txt```
 
-Se necesita crear una dirección de compañía a través de la transacción SUCOMP para poder configurar
-el TMS en el cliente 000, sino dirá "Could not create user TMSADM" y no avanzará.
+Se necesita crear una dirección de compañía a través de la transacción SUCOMP para poder configurar<br>
+el TMS en el cliente 000, sino dirá "Could not create user TMSADM" y no avanzará.<br>
 
-Ingresaremos a la transacción SUCOMP, pondremos un nombre y haremos click en el botón de "Create"
-<img width="487" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e4d8f179-6480-46e0-975f-5a5aeeb0e883">
+Ingresaremos a la transacción SUCOMP, pondremos un nombre y haremos click en el botón de "Create"<br>
+<img width="487" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e4d8f179-6480-46e0-975f-5a5aeeb0e883"><br>
 
-Llenaremos los datos obligatorios:
-nota: sap verificará la consistencia de algunos datos por lo que hay datos que tienen que ser correctos
+Llenaremos los datos obligatorios:<br>
+nota: sap verificará la consistencia de algunos datos por lo que hay datos que tienen que ser correctos<br>
 <img width="554" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/eefb7779-1a07-42b4-bf90-8f6c6e6c8b4f">
 
-Si todo va bien nos dirá "Address data was saved"
+Si todo va bien nos dirá "Address data was saved"<br>
 
-Si ingresamos a los usuarios del sistema por SU01, veremos que no tienen asignada una compañía:
-<img width="608" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/3f77d61b-d1bb-41c8-8446-c001d0515691">
+Si ingresamos a los usuarios del sistema por SU01, veremos que no tienen asignada una compañía:<br>
+<img width="608" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/3f77d61b-d1bb-41c8-8446-c001d0515691"><br>
 
-A través de la SU10 podremos asignar la nueva compañía a todos los usuarios que hayamos elegido:
+A través de la SU10 podremos asignar la nueva compañía a todos los usuarios que hayamos elegido:<br>
 
-<img width="609" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f86813eb-4d4d-44fe-9d22-bbda637c8be3">
+<img width="609" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f86813eb-4d4d-44fe-9d22-bbda637c8be3"><br>
 
-Tener en cuenta las posibles advertencias que salgan:
-<img width="696" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/fac3a7b8-a5b2-4ba0-a458-817c4f49d2a9">
+Tener en cuenta las posibles advertencias que salgan:<br>
+<img width="696" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/fac3a7b8-a5b2-4ba0-a458-817c4f49d2a9"><br>
 
-En caso de querer asignar la dirección y no querer modificar los campos requeridos, podremos hacer una copia del usuario:
-Lo haremos a través de la transacción SU01:
-<img width="443" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/b23be335-872f-4530-95b4-1e3bdb566d29">
+En caso de querer asignar la dirección y no querer modificar los campos requeridos, podremos hacer una copia del usuario:<br>
+Lo haremos a través de la transacción SU01:<br>
+<img width="443" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/b23be335-872f-4530-95b4-1e3bdb566d29"><br>
 
 Al copiar el usuario, nos saldrán advertencias similares a estas:<br>
 <img width="631" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c8be65b4-044f-4ff7-a638-3a620aa23a99"><br>
