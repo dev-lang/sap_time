@@ -280,6 +280,47 @@ Al no poder mostrar el contenido en el navegador, se realiza una excepción en e
 
 La solución se encuentra investigando, puede deberse a una falta de instalación de Java en el sistema.
 
+## no default co. address has been maint. in the system. create an address:
+
+<img width="600" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f0eb7b4b-5eed-454d-ad72-b486c3b90d46">
+
+```comp-readme.txt```
+
+Se necesita crear una dirección de compañía a través de la transacción SUCOMP para poder configurar
+el TMS en el cliente 000, sino dirá "Could not create user TMSADM" y no avanzará.
+
+Ingresaremos a la transacción SUCOMP, pondremos un nombre y haremos click en el botón de "Create"
+<img width="487" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e4d8f179-6480-46e0-975f-5a5aeeb0e883">
+
+Llenaremos los datos obligatorios:
+nota: sap verificará la consistencia de algunos datos por lo que hay datos que tienen que ser correctos
+<img width="554" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/eefb7779-1a07-42b4-bf90-8f6c6e6c8b4f">
+
+Si todo va bien nos dirá "Address data was saved"
+
+Si ingresamos a los usuarios del sistema por SU01, veremos que no tienen asignada una compañía:
+<img width="608" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/3f77d61b-d1bb-41c8-8446-c001d0515691">
+
+A través de la SU10 podremos asignar la nueva compañía a todos los usuarios que hayamos elegido:
+
+<img width="609" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f86813eb-4d4d-44fe-9d22-bbda637c8be3">
+
+Tener en cuenta las posibles advertencias que salgan:
+<img width="696" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/fac3a7b8-a5b2-4ba0-a458-817c4f49d2a9">
+
+En caso de querer asignar la dirección y no querer modificar los campos requeridos, podremos hacer una copia del usuario:
+Lo haremos a través de la transacción SU01:
+<img width="443" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/b23be335-872f-4530-95b4-1e3bdb566d29">
+
+Al copiar el usuario, nos saldrán advertencias similares a estas:
+<img width="631" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c8be65b4-044f-4ff7-a638-3a620aa23a99">
+
+Guardaremos el usuario, llenaremos apellido y nombre cuando nos requiera y asignaremos una compañía.
+Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Standard Adress":
+<img width="571" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/94948070-4844-4381-80c8-c7975b377d85">
+
+Volveremos a repetir el proceso de STMS para crear el DOMAIN y TMS y ya debería salir este mensaje al terminar:
+<img width="555" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e757dbe6-a8d7-4e9d-a7aa-4785bc49c612">
 
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
