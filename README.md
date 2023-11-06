@@ -322,6 +322,14 @@ Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Sta
 Volveremos a repetir el proceso de STMS para crear el DOMAIN y TMS y ya debería salir este mensaje al terminar:
 <img width="555" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e757dbe6-a8d7-4e9d-a7aa-4785bc49c612">
 
+## STMS Configurar ruta de transporte local entre clientes 000 y 001
+
+Logueados en el cliente 000, vamos a "Transport Routes"
+Agregamos un single system y configuramos de la siguiente forma:
+<img width="461" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8988efb0-6738-4f8e-bb2d-d68c8f428b8b">
+<img width="459" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4359dcae-6ffb-4721-9a53-9c305e42b5c2">
+
+Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
