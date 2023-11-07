@@ -357,7 +357,13 @@ Igual deberemos comprobar, en este caso por la transacción PFCG si el rol o com
 
 <img width="508" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/975fddc2-7db6-404e-aa3e-18ec03e9d6b1">
 
-En caso de que nos salga este error, podremos cambiar de forma temporal el status de modificable a través de la transacción OBD4
+En caso de que nos salga este error (por ejemplo en la transacción OBD4)
+podremos cambiar de forma temporal el status de modificable a través de la transacción SE06:
+
+<img width="516" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7e558cc5-34df-4d10-b00b-cedc3d4318b4">
+Dentro de "system change option" podremos modificar los parámetros:
+<img width="654" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/68a57150-4add-4976-8c8a-125fc5f72c53">
+
 
 ## The data is locked by user ... and can be displayed only.
 
