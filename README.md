@@ -335,10 +335,10 @@ Es importante tambien configurar la ruta como "Consolidation" y el Target system
 
 Ejecutar /osm04
 
-Podremos cerrar las sesiones seleccionandolas y haciendo click en "Delete Session"
-![image](https://github.com/dev-lang/sap_time/assets/56205122/7456e90a-44a4-46e8-8273-2f69351e15d8)
+Podremos cerrar las sesiones seleccionandolas y haciendo click en "Delete Session"<br>
+![image](https://github.com/dev-lang/sap_time/assets/56205122/7456e90a-44a4-46e8-8273-2f69351e15d8)<br>
 
-Tener en cuenta que esto puede probar el cierre abrupto de tareas activas
+Tener en cuenta que esto puede provocar el cierre abrupto de tareas activas, usar con cuidado
 
 ## table class is 'C'. Entries are only imported to client '000'
 
@@ -372,8 +372,8 @@ En la transacción SCC4 podremos ver los clientes (mandantes) del sistema:<br>
 
 ## The data is locked by user ... and can be displayed only.
 
-Si nos aparece este mensaje al intentar ingresar a una tabla o transacción, 
-podremos ejecutar la transacción SM04 para así desbloquear el acceso.
+Si nos aparece este mensaje al intentar ingresar a una tabla o transacción, <br>
+podremos ejecutar la transacción SM04 para así desbloquear el acceso.<br>
 <img width="559" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/29ff8a10-b029-4f3d-be6a-ff77d6d6dbac">
 
 
