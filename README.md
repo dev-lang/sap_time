@@ -315,21 +315,43 @@ Lo haremos a través de la transacción SU01:<br>
 Al copiar el usuario, nos saldrán advertencias similares a estas:<br>
 <img width="631" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/c8be65b4-044f-4ff7-a638-3a620aa23a99"><br>
 
-Guardaremos el usuario, llenaremos apellido y nombre cuando nos requiera y asignaremos una compañía.
-Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Standard Adress":
-<img width="571" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/94948070-4844-4381-80c8-c7975b377d85">
+Guardaremos el usuario, llenaremos apellido y nombre cuando nos requiera y asignaremos una compañía.<br>
+Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Standard Adress":<br>
+<img width="571" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/94948070-4844-4381-80c8-c7975b377d85"><br>
 
-Volveremos a repetir el proceso de STMS para crear el DOMAIN y TMS y ya debería salir este mensaje al terminar:
-<img width="555" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e757dbe6-a8d7-4e9d-a7aa-4785bc49c612">
+Volveremos a repetir el proceso de STMS para crear el DOMAIN y TMS y ya debería salir este mensaje al terminar:<br>
+<img width="555" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e757dbe6-a8d7-4e9d-a7aa-4785bc49c612"><br>
 
 ## STMS Configurar ruta de transporte local entre clientes 000 y 001
 
 Logueados en el cliente 000, vamos a "Transport Routes"
-Agregamos un single system y configuramos de la siguiente forma:
-<img width="461" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8988efb0-6738-4f8e-bb2d-d68c8f428b8b">
-<img width="459" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4359dcae-6ffb-4721-9a53-9c305e42b5c2">
+Agregamos un single system y configuramos de la siguiente forma:<br>
+<img width="461" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8988efb0-6738-4f8e-bb2d-d68c8f428b8b"><br>
+<img width="459" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4359dcae-6ffb-4721-9a53-9c305e42b5c2"><br>
 
-Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP
+Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP.
+
+## Salir de transacción si no funciona la opción de detener transacción:
+
+Ejecutar /osm04
+
+Podremos cerrar las sesiones seleccionandolas y haciendo click en "Delete Session"
+![image](https://github.com/dev-lang/sap_time/assets/56205122/7456e90a-44a4-46e8-8273-2f69351e15d8)
+
+Tener en cuenta que esto puede probar el cierre abrupto de tareas activas
+
+
+## Transporte de OTs entre clientes
+
+A través de la SE38, ejecutaremos RSTRANSP para el transporte de variantes.
+Luego a través de la transacción SE10 deberíamos poder liberarla.
+
+## SU25 - PFCG (Autorizaciones)
+
+![image](https://github.com/dev-lang/sap_time/assets/56205122/93ac9cd8-ea8f-4a12-a49a-26047ca887c3)
+
+Deberemos ejecutar SU25 en caso de ser necesario.
+
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
