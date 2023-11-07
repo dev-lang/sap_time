@@ -340,6 +340,18 @@ Podremos cerrar las sesiones seleccionandolas y haciendo click en "Delete Sessio
 
 Tener en cuenta que esto puede probar el cierre abrupto de tareas activas
 
+## table class is 'C'. Entries are only imported to client '000'
+
+Al intentar realizar un transporte de roles, nos pueden aparecer estos errores:
+<img width="912" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7dc4608a-86a1-48a5-8178-dc6114d410c8">
+
+Algo que podemos hacer para pasar este error a modo de workaround es marcar la siguiente opción antes de importar:
+<img width="442" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/0380cc1e-d613-4efc-8e31-2179bed62dc9">
+
+Podemos ver que ahora logra importar la OT al cliente/mandante:
+<img width="712" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/5ec22d5f-0dfe-44f3-944c-9e0235898eff">
+
+Igual deberemos comprobar, en este caso por la transacción PFCG si el rol o componente fue impactado correctamente
 
 ## Transporte de OTs entre clientes
 
