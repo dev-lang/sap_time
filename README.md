@@ -342,16 +342,30 @@ Tener en cuenta que esto puede probar el cierre abrupto de tareas activas
 
 ## table class is 'C'. Entries are only imported to client '000'
 
-Al intentar realizar un transporte de roles, nos pueden aparecer estos errores:
-<img width="912" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7dc4608a-86a1-48a5-8178-dc6114d410c8">
+Al intentar realizar un transporte de roles, nos pueden aparecer estos errores:<br>
+<img width="912" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7dc4608a-86a1-48a5-8178-dc6114d410c8"><br>
 
-Algo que podemos hacer para pasar este error a modo de workaround es marcar la siguiente opción antes de importar:
-<img width="442" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/0380cc1e-d613-4efc-8e31-2179bed62dc9">
+Algo que podemos hacer para pasar este error a modo de workaround es marcar la siguiente opción antes de importar:<br>
+<img width="442" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/0380cc1e-d613-4efc-8e31-2179bed62dc9"><br>
 
-Podemos ver que ahora logra importar la OT al cliente/mandante:
-<img width="712" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/5ec22d5f-0dfe-44f3-944c-9e0235898eff">
+Podemos ver que ahora logra importar la OT al cliente/mandante:<br>
+<img width="712" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/5ec22d5f-0dfe-44f3-944c-9e0235898eff"><br>
 
 Igual deberemos comprobar, en este caso por la transacción PFCG si el rol o componente fue impactado correctamente
+
+## Client 000 has status 'not modifiable'
+
+<img width="508" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/975fddc2-7db6-404e-aa3e-18ec03e9d6b1">
+
+En caso de que nos salga este error, podremos cambiar de forma temporal el status de modificable a través de la transacción OBD4
+
+## The data is locked by user ... and can be displayed only.
+
+Si nos aparece este mensaje al intentar ingresar a una tabla o transacción, 
+podremos ejecutar la transacción SM04 para así desbloquear el acceso.
+<img width="559" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/29ff8a10-b029-4f3d-be6a-ff77d6d6dbac">
+
+
 
 ## Transporte de OTs entre clientes
 
