@@ -7,6 +7,10 @@ en aquellos sistemas con licencia vencida, puede servir para continuar utilizand
 ### LEER READMES INCLUIDOS EN CASO DE PRESENTAR PROBLEMAS CON VBS
 scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-80001468.exe
 
+**ADVERTENCIA: Las operaciones que se realicen, deben hacerse en la medida de lo posible en un cliente diferente a 000 y 001<br>
+Se puede crear un cliente más en la transacción SCC4
+Usar las instrucciones solamente como referencia en pruebas iniciales pero crear un mandante independiente**
+
 # NOTAS DE INSTALACIÓN:
 
 1. Se debe instalar el OS elegido (se ha probado Win2016 para ECC6 EHP6 y Win2012 R2 para ECC EHP8)
