@@ -355,15 +355,20 @@ Igual deberemos comprobar, en este caso por la transacción PFCG si el rol o com
 
 ## Client 000 has status 'not modifiable'
 
-<img width="508" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/975fddc2-7db6-404e-aa3e-18ec03e9d6b1">
+<img width="508" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/975fddc2-7db6-404e-aa3e-18ec03e9d6b1"><br>
 
-En caso de que nos salga este error (por ejemplo en la transacción OBD4)
-podremos cambiar de forma temporal el status de modificable a través de la transacción SE06:
+En caso de que nos salga este error (por ejemplo en la transacción OBD4)<br>
+podremos cambiar de forma temporal el status de modificable a través de la transacción SE06:<br>
 
-<img width="516" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7e558cc5-34df-4d10-b00b-cedc3d4318b4">
-Dentro de "system change option" podremos modificar los parámetros:
-<img width="654" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/68a57150-4add-4976-8c8a-125fc5f72c53">
+<img width="516" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/7e558cc5-34df-4d10-b00b-cedc3d4318b4"><br>
+Dentro de "system change option" podremos modificar los parámetros:<br>
+<img width="654" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/68a57150-4add-4976-8c8a-125fc5f72c53"><br>
 
+Podremos escoger entre los siguientes estados:<br>
+<img width="621" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f01e1639-18ce-47d4-8532-ef0deae4cac8"><br>
+
+En la transacción SCC4 podremos ver los clientes (mandantes) del sistema:<br>
+<img width="515" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/bb841a81-7133-40a8-9ed0-cd63dd33745e"><br>
 
 ## The data is locked by user ... and can be displayed only.
 
