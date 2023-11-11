@@ -87,6 +87,7 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 | byebyetimer.bat                  | Desactiva la configuración de hora y realiza varias configuraciones para SAP Netweaver en Windows Server 2003 |
 | Linux_Ubuntu-1810.sh             | Prepara sistema Linux para SAP (Script parcial) |
 | enable_rds.ps1                   | Habilita el uso de RDS para conexión remota al equipo |
+| disable_ipv6-loopback.ps1        | Desactivar IPV6 (WinServer 2012) |
 
 ## Linux SAP (Ubuntu 18.10):
 
