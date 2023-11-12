@@ -303,6 +303,9 @@ nota: sap verificará la consistencia de algunos datos por lo que hay datos que 
 
 Si todo va bien nos dirá "Address data was saved"<br>
 
+**NOTA: A partir de este punto, la creación de un usuario es opcional y basta con seleccionar como "Standard Address"
+para poder configurar el STMS**
+
 Si ingresamos a los usuarios del sistema por SU01, veremos que no tienen asignada una compañía:<br>
 <img width="608" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/3f77d61b-d1bb-41c8-8446-c001d0515691"><br>
 
