@@ -338,6 +338,7 @@ Agregamos un single system y configuramos de la siguiente forma:<br>
 <img width="459" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4359dcae-6ffb-4721-9a53-9c305e42b5c2"><br>
 
 Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP.
+Esto puede ser configurado desde el menú de Edit. Tener en cuenta que una vez activada la ruta, las opciones aparecerán en gris.
 
 ## Salir de transacción si no funciona la opción de detener transacción:
 
@@ -390,6 +391,12 @@ podremos ejecutar la transacción SM04 para así desbloquear el acceso.<br>
 
 A través de la SE38, ejecutaremos RSTRANSP para el transporte de variantes.
 Luego a través de la transacción SE10 deberíamos poder liberarla.
+
+##System unknown in Transport Management System
+
+En caso de que aparezca este error al hacer un Add manualmente, se debe hacer sin establecer un target client.
+Después de agregar la orden a la cola de stms, se debe agregar, no en el mismo momento de añadirla
+
 
 ## SU25 - PFCG (Autorizaciones)
 
