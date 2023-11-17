@@ -285,6 +285,14 @@ Al no poder mostrar el contenido en el navegador, se realiza una excepción en e
 
 La solución se encuentra investigando, puede deberse a una falta de instalación de Java en el sistema.
 
+## CREAR NUEVO CLIENTE:
+
+Primero ejecutar la RZ10, importar los perfiles y editar login/no_automatic_user_sapstar cambiando el valor a 0
+Después en la SCC4, crear un nuevo cliente, en caso de no tener un logical system creado, obviar el campo.
+Despues reiniciar el servidor sap desde el sapmmc. 
+
+Loguear con SAP*, contraseña PASS
+
 ## [FIX] no default co. address has been maint. in the system. create an address:
 
 <img width="600" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f0eb7b4b-5eed-454d-ad72-b486c3b90d46">
