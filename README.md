@@ -20,6 +20,12 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 5. Copiar el archivo .bat correspondiente<br>
    (por ejemplo, para SAP ECC6 EHP8 bajo Win2012R2 se requiere una estructura así:<br>
    <img width="469" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8a75964a-8010-4a8b-88b7-39a4b145877a"><br>
+   para la ECC6 debe tener una estructura similar a la siguiente:<br>
+   ![image](https://github.com/dev-lang/sap_time/assets/56205122/76b6d92b-82c9-430f-864b-7efce40caa83)<br>
+   y el ejemplo del .bat funcionando:<br>
+   ![image](https://github.com/dev-lang/sap_time/assets/56205122/ca7e12ec-840f-439d-a92a-acb412eb2ec1)
+
+
 6. Ejecutar .BAT y seguir las instrucciones y notas de este README
 
 ## Java is NOT ACTIVE (VM Container)
