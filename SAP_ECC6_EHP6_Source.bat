@@ -1,5 +1,7 @@
 unzip NW_7.03_Kernel_7.20_EXT_Sybase_ASE.zip
 unzip NW_7.03_Kernel_7.20_EXT_Sybase_ASE_Unicode.zip
+del NW_7.03_Kernel_7.20_EXT_Sybase_ASE.zip
+del NW_7.03_Kernel_7.20_EXT_Sybase_ASE_Unicode.zip
 cd ECC6_EHP6_Export
 start /wait 51041989_part01.exe /s
 cd ..
