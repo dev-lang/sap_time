@@ -239,6 +239,17 @@ haremos click en Close y cerraremos el navegador
 Al ingresar al SAP Management Console (sapmmc.msc) deberemos ver algo de la siguiente forma:<BR>
 <img width="247" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4e469ce5-3fa6-4a83-989d-564e6da9374b">
 
+## No connect to database, sesión terminated
+
+En caso de intentar acceder a la instancia y que devuelva este mensaje, podremos revisar el log de la consola MMC
+encontraremos errores del tipo "SAP Basis System: Error in DB rollback/SyFlush, return code  000256" o "Database: SQL error 30046  occurred; work process in reconnect status",
+podremos solucionar esto reiniciando los servicios de Sybase a través de la services.msc y reintentar abrir el servidor desde el SAPGUI.
+Con reiniciar el servicio Sybase SQLServer _ SID debería bastar para permitir que la instancia vuelva a conectar hacia la base de datos, caso contrario reiniciar la instancia.
+
+## DBACOCKPIT - OBJECTS_OBJREF_NOT_ASSIGNED Dump
+
+Se requiere instalar una nota o support package en el sistema afectado
+
 ## IPV4 
 
 En caso de tener la VM configurada como red puente en lugar de NAT, deberemos usar o bien la IPV4 o bien desactivar la IPV6
