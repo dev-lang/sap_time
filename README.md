@@ -310,6 +310,16 @@ Despues reiniciar el servidor sap desde el sapmmc.
 
 Loguear con SAP*, contraseña PASS
 
+## Reiniciar instancia sin usar sapmmc
+
+Abrir la consola cmd y ejecutar. reemplazar SID por la id de sap y password por la contraseña del usuario de administrador
+
+```
+cd S:\usr\sap\<SID>\SYS\exe\uc\NTAMD64
+sapcontrol -nr 00 -user Administrator <password> -function Stop
+sapcontrol -nr 00 -user Administrator <password> -function Start
+```
+
 ## [FIX] no default co. address has been maint. in the system. create an address:
 
 <img width="600" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/f0eb7b4b-5eed-454d-ad72-b486c3b90d46">
