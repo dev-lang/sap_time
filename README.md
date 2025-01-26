@@ -239,6 +239,12 @@ haremos click en Close y cerraremos el navegador
 Al ingresar al SAP Management Console (sapmmc.msc) deberemos ver algo de la siguiente forma:<BR>
 <img width="247" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4e469ce5-3fa6-4a83-989d-564e6da9374b">
 
+## Product Catalog
+
+En caso de que sapinst no arranque de forma directa, podremos especificar de forma explícita que cargue el xml con el siguiente comando:
+
+sapinst.exe SAPINST_CONTROL_URL=product.catalog.xml
+
 ## No connect to database, sesión terminated
 
 En caso de intentar acceder a la instancia y que devuelva este mensaje, podremos revisar el log de la consola MMC
@@ -427,7 +433,7 @@ podremos ejecutar la transacción SM04 para así desbloquear el acceso.<br>
 A través de la SE38, ejecutaremos RSTRANSP para el transporte de variantes.
 Luego a través de la transacción SE10 deberíamos poder liberarla.
 
-##System unknown in Transport Management System
+## System unknown in Transport Management System
 
 En caso de que aparezca este error al hacer un Add manualmente, se debe hacer sin establecer un target client.
 Después de agregar la orden a la cola de stms, se debe agregar, no en el mismo momento de añadirla
