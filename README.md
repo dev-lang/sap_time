@@ -382,6 +382,25 @@ Luego, a través de la SUCOMP, definiremos a la compañía que creamos como "Sta
 Volveremos a repetir el proceso de STMS para crear el DOMAIN y TMS y ya debería salir este mensaje al terminar:<br>
 <img width="555" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/e757dbe6-a8d7-4e9d-a7aa-4785bc49c612"><br>
 
+## FIX: Address doesn't exist 22787 / SAP note 1420281
+
+Entrar a SE16N, y escribir la tabla ADRC
+Escribir /H y presionar Enter en el campo de comandos para activar el modo depuración.
+Presionar F8
+Estaremos en la Screen 100/19 of program SAPLSE16N
+En DESKTOP 3 podremos agregar variables a la sesión,
+Escribiremos los siguientes valores y presionamos enter:
+
+![image](https://github.com/user-attachments/assets/f95eb5e4-d7bd-46e2-abf8-d5d9bc706c09)
+
+Cambiaremos ambos valores a X (El valor hexadecimal cambiara a 5800)
+Presionamos F8 y podremos editar la tabla para agregar el campo que faltaba:
+
+![image](https://github.com/user-attachments/assets/e56a2c47-308f-4518-a806-3fe4ddca7fbc)
+
+Guardaremos los datos con el ícono de guardado y regresaremos a SUCOMP para editar o borrar la company como querramos.
+Es recomendable igualmente eliminar el registro y crearlo de cero para que sea más limpio.
+
 ## STMS Configurar ruta de transporte local entre clientes 000 y 001
 
 Logueados en el cliente 000, vamos a "Transport Routes"
