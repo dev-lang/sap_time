@@ -392,6 +392,9 @@ Agregamos un single system y configuramos de la siguiente forma:<br>
 Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP.
 Esto puede ser configurado desde el menú de Edit. Tener en cuenta que una vez activada la ruta, las opciones aparecerán en gris.
 
+Es importante elegir bien el target a la hora de crear las órdenes o se harán como "Local Change Requests" y no se pasarán al otro cliente.
+En caso de que el check diga "System <sid> has transport routes, but no standard layer for it" se puede ignorar.
+
 ## Salir de transacción si no funciona la opción de detener transacción:
 
 Ejecutar /osm04
