@@ -478,6 +478,10 @@ Después de agregar la orden a la cola de stms, se debe agregar, no en el mismo 
 
 Deberemos ejecutar SU25 en caso de ser necesario.
 
+## Tracear autorizaciones pendientes sin SU53:
+
+-Podremos utilizar STAUTHTRACE para setear un trace a un usuario para asignarle los objetos y autorizaciones<br>
+al rol asociado a un usuario por medio de PFCG. 
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
