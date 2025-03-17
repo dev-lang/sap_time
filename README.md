@@ -275,7 +275,18 @@ login/create_sso2_ticket = 2
 login/accept_sso2_ticket = 1
 ```
 
-Reiniciar AS y servicios
+Reiniciar AS y servicio de instancia
+
+## Configurar ST03N:
+
+Para obtener los datos de forma constante de la carga de los WP configurados, se debe crear un job por medio de la SM37 con los siguientes datos:
+
+```
+JOB NAME: SAP_COLLECTOR_FOR_PERFMONITOR
+STEP:   RSCOLL00
+USUARIO: CON PERMISOS POR ROL en OBJETOS S_BTCH_ADM (*), S_BTCH_JOB (PLAN, RELE) y S_BTCH_NAM (*)
+CONDICION: PERÍODICA (Hourly)
+```
 
 ## IPV4 
 
