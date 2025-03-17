@@ -265,7 +265,17 @@ y cambiar el timezone para que coincida con el sistema:<br>
 
 ![image](https://github.com/user-attachments/assets/fa523038-ec41-4905-941e-9bd3d6c8c3b7)<br>
 
+Ingresar los siguiente parámetros al perfil de instancia (RZ11)
 
+```
+icm/host_name_full = sapsrv
+icm/server_port_0 = PROT=HTTP,PORT=80$$,PROCTIMEOUT=600,TIMEOUT=600
+icm/server_port_1 = PROT=HTTPS,PORT=443$$,PROCTIMEOUT=600,TIMEOUT=600
+login/create_sso2_ticket = 2
+login/accept_sso2_ticket = 1
+```
+
+Reiniciar AS y servicios
 
 ## IPV4 
 
