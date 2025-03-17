@@ -252,11 +252,11 @@ encontraremos errores del tipo "SAP Basis System: Error in DB rollback/SyFlush, 
 podremos solucionar esto reiniciando los servicios de Sybase a través de la services.msc y reintentar abrir el servidor desde el SAPGUI.
 Con reiniciar el servicio Sybase SQLServer _ SID debería bastar para permitir que la instancia vuelva a conectar hacia la base de datos, caso contrario reiniciar la instancia.
 
-## DBACOCKPIT - OBJECTS_OBJREF_NOT_ASSIGNED Dump [FIX 14-03-2025]
+## DBACOCKPIT - OBJECTS_OBJREF_NOT_ASSIGNED Dump [Notas 17-03-2025]
 
 Se requiere instalar una nota o support package en el sistema afectado
 
-Workaround/fix:
+Workaround (no es solución permanente):
 
 Ingresar a transacción SM30<br>
 ![image](https://github.com/user-attachments/assets/fc2a5685-98ab-4c99-aee1-640574401ba3)
