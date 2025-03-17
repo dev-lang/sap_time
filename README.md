@@ -28,6 +28,21 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 
 6. Ejecutar .BAT y seguir las instrucciones y notas de este README
 
+# Recomendacion de configuración
+
+## Recomendacion de seteo ECC6 EHP6:
+```
+1- Configurar usuarios de contingencia con permisos SUPER/SAP_ALL
+2- Setear horario de servidor y AS en misma zona horaria
+3- Configurar roles y job para SAP_COLLECTOR_FOR_PERFMONITOR
+4- En RZ10 importar perfiles (Utilities > Import Profiles > of Active Servers)
+5- En caso de no funcionar DBACOCKPIT revisar paso 2 y configurar según notas de SM30 y ST03N
+	a - setear job sap_collector_for_perfmonitor
+	b - configurar parámetros en rz10, perfil de INSTANCIA 
+      nota: para ver los parámetros actuales, usar la transacción RSPFPAR o RZ10
+	c - no olvidar que se debe reiniciar AS y servicio de instancia (em services.msc)
+```
+
 ## Java is NOT ACTIVE (VM Container)
 
 Esta advertencia que podemos llegar a ver dentro del sapmmc.mmc es debido a que no se encuentra instalada
