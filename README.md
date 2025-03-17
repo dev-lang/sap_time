@@ -114,6 +114,8 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 
 Seguir instrucciones de guía:
 https://blogs.sap.com/2022/11/14/sap-netweaver-as-abap-developer-edition-installation-pitfalls/<BR>
+Archive: https://web.archive.org/web/20240115104202/https://blogs.sap.com/2022/11/14/sap-netweaver-as-abap-developer-edition-installation-pitfalls/<BR>
+
 Algunos pasos se encuentran parcialmente cubiertos en script Linux_Ubuntu-1810.sh (paso 5 a 8 incluyendo hostname)<br>
 
 Ejecutar realizando:
