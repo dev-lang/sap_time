@@ -305,6 +305,17 @@ USUARIO: CON PERMISOS POR ROL en OBJETOS S_BTCH_ADM (*), S_BTCH_JOB (PLAN, RELE)
 CONDICION: PERÍODICA (Hourly)
 ```
 
+## Error 403 web dynpros
+
+Por medio de la transaccion SICF
+Activar los siguientes servicios:
+
+```
+sap/public/bc
+sap/public/bc/ur
+sap/bc/webdynpro/sap/DBA_COCKPIT
+```
+
 ## IPV4 
 
 En caso de tener la VM configurada como red puente en lugar de NAT, deberemos usar o bien la IPV4 o bien desactivar la IPV6
