@@ -41,6 +41,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 	b - configurar parámetros en rz10, perfil de INSTANCIA 
       nota: para ver los parámetros actuales, usar la transacción RSPFPAR o RZ10
 	c - no olvidar que se debe reiniciar AS y servicio de instancia (em services.msc)
+6- Revisar Servicios requeridos en SICF
 ```
 
 ## Java is NOT ACTIVE (VM Container)
