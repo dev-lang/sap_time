@@ -60,6 +60,17 @@ Puede dar un error en la primera ejecución pero después funciona correctamente
 
 Después se requiere configurar los PATH del sistema (se agregará un script .ps1)<br>
 
+Nota 19-03-2025: Ver solución de VMC Container
+
+## VMC Container is not active on this application server
+
+Agregar el siguiente parámetro al perfil de instancia:
+```
+vmcj/enable	on
+```
+
+Esto soluciona tambien el "Java is not active"
+
 # CONFIGURACIONES EXITOSAS (DE VM):
 
 Nota: tener en cuenta que la configuración de disco puede cambiar a nivel OS si se hacen discos dinámicos.
