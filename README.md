@@ -332,6 +332,52 @@ sap/public/bc/ur
 sap/bc/webdynpro/sap/DBA_COCKPIT
 ```
 
+## SWNC_TCOLL_STARTER - No authorization for transaction ST07
+
+Vamos a crear un ROL llamado Z_BATCH_USER_TRANSACTIONS, le vamos a agregar las siguientes autorizaciones:
+
+![image](https://github.com/user-attachments/assets/00c19a55-38a1-47da-9739-cb125aeae05c)
+
+```
+S_ADMI_FCD
+S_CCM_RECV
+S_RZL_ADM
+```
+
+Nos quedará de esta forma con los datos completados:
+
+![image](https://github.com/user-attachments/assets/77dbf1ba-0ee5-4881-b1cd-672a80da2284)
+
+```
+S_ADMI_FCD: ST0R
+S_CCM_RECV: Activity P0 (Accept CCMS CSM data)
+S_RZL_ADM: Activity 03 (Display / Visualizar)
+```
+
+Ahora agregaremos una mas llamadada S_CTS_SADM
+
+![image](https://github.com/user-attachments/assets/e0ddae2e-1fc5-4072-88e8-8ff063467ff9)
+
+E iremos completando los campos con los datos requeridos
+
+![image](https://github.com/user-attachments/assets/1e4a868a-f5bc-440c-ac46-8c96936d0ed8)
+
+```CTS_ADMFCT: TABL```
+
+y en Domain y DESTSYS lo llenaremos de acuerdo a nuestro sistema, por ejemplo en este caso el sistema es NSP por lo que se completara de esta forma:
+
+![image](https://github.com/user-attachments/assets/a573bc1f-c68a-456d-915a-2f6ba0deb627)
+
+De cualquier forma, para los permisos podremos hacer un STAUTHTRACE sobre el usuario que asignamos al job y tomar de ahi los valores que esta buscando. 
+
+Y luego filtraremos por el resultado 12 / No authorization in user master record
+
+Procederemos una vez realizado el mantenimiento de las autorizaciones a generar el perfil, y transportaremos el perfil en caso de ser necesario. 
+para liberar la orden utilizaremos la transaccion SE01 e importarla en el otro cliente / sistema.
+
+En caso de ser entre clientes es posible que se deba marcar "Ignore Non-Pemitted Table Class" para evitar un error por el tipo de clase de tablas.
+Luego asignaremos el rol al usuario por medio de SU01
+
 ## IPV4 
 
 En caso de tener la VM configurada como red puente en lugar de NAT, deberemos usar o bien la IPV4 o bien desactivar la IPV6
