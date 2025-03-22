@@ -308,9 +308,20 @@ login/create_sso2_ticket = 2
 login/accept_sso2_ticket = 1
 ```
 
+La ultima edición funcional del perfil de instancia quedó asi (22/03/2025):
+
+![image](https://github.com/user-attachments/assets/3a5e7206-13c3-4785-941e-0e16dc2aec44)
+
+
 Reiniciar AS y servicio de instancia
 
 ## Configurar ST03N:
+
+JOB SAP_COLLECTOR_FOR_PERFMONITOR:
+![image](https://github.com/user-attachments/assets/c57300f0-fb07-4232-b489-57eb8ab93178)
+
+![image](https://github.com/user-attachments/assets/7e9ffc0c-1ee1-4dfd-8523-cb946afe98f5)
+
 
 Para obtener los datos de forma constante de la carga de los WP configurados, se debe crear un job por medio de la SM37 con los siguientes datos:
 
@@ -325,6 +336,9 @@ CONDICION: PERÍODICA (Hourly)
 
 Por medio de la transaccion SICF
 Activar los siguientes servicios:
+
+![image](https://github.com/user-attachments/assets/073f5ed2-050c-4ffd-ab46-f3bace9e5044)
+![image](https://github.com/user-attachments/assets/473ff3b6-1998-4427-976e-e8b6a6b8b84a)
 
 ```
 sap/public/bc
