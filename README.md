@@ -610,7 +610,78 @@ sapgui/user_scripting
 Permanente: RZ10
 https://success.panaya.com/docs/how-to-set-server-parameters-to-enable-gui-scripting-server-side
 
-ref:
+## Actualizar Kernel (Notas)
+Se ha probado actualizar el kernel desde 720_EXT a 722_EXT con éxito.
+Algunas cosas a tener en cuenta:
+
++ se debe detener la instancia de sap desde MMC o con el siguiente comando:
+
+```
+cd C:\usr\sap\NSP\DVEBMGS00\exe
+sapcontrol -user Administrator password -nr 00 -function StopSystem >> C:\sapcontrolstop.log
+```
+
++ crear una copia de la carpeta C:\usr\sap\NSP\SYS\exe\uc\NTAMD64
++ los servicios se deben establecer en MANUAL antes de detenerlos
++ recien ahi se deben detener los servicios:
+```
+	-SAPDAA_97
+	-SAPNSP_00
+	-SAPHostExec
+	-SAPHostControl
+```
++ descomprimir los .SAR directamente puede llevar a inconsistencias entre los archivos<br>
+es recomendable ejecutar:
+
+```
+sapcar -xvf SAPEXE_1400-70000603.SAR -R kernel
+sapcar -xvf SAPEXEDB_1400-70000608.SAR -R kerneld
+```
+
++ una vez que la instancia y los servicios estén detenidos, podremos copiar los archivos de kernel y kerneld en C:\usr\sap\NSP\SYS\exe\uc\NTAMD64 - copy
++ renombrar la carpeta ORIGINAL a NTAMD64-OLD
++ renombrar la carpeta NTAMD64 - copy a NTAMD64
++ iniciar los servicios:
+```
+	-SAPDAA_97
+	-SAPNSP_00
+	-SAPHostExec
+	-SAPHostControl
+```
++ reiniciar la instancia desde MMC o con el siguiente comando:
+
+```
+cd C:\usr\sap\NSP\DVEBMGS00\exe
+sapcontrol -user Administrator password -nr 00 -function StartSystem >> C:\sapcontrolstart.log
+```
+
++ volver a poner en automático los servicios que pasamos a MANUAL:
+
+```
+	-SAPDAA_97
+	-SAPNSP_00
+	-SAPHostExec
+```
+
+> **💡 Nota importante:** De salir el WARNING de "Running but Dialog Queue info unavailable” deberemos:
+
++ detener la instancia y servicios
++ (opcional pero importante) revisar que C:\usr\sap\NSP\DVEBMGS00\exe tenga los mismos cambios que NTAMD64
++ ir a c:\windows\system32 y comprobar la version de sapstartsrv.exe
++ de ser diferente a 7220.XXXX.XX.XXXXX, renombrar a sapstartsrv.exe.720
++ copiar el ejecutable nuevo desde la carpeta kernel y pegarla en c:\windows\system32
++ reiniciar servicios e instancia
+
+Nota: en la operatoria de prueba no afectó al funcionamiento de la instancia pero aun asi es algo a tener en cuenta
+para que sea consistente la actualización.
+
+> **✅ Consejo:** comprobar que aparezca todo en verde con un mensaje como <br>
+"Running, Message Server connection ok, Dialog Queue time: 0.00 sec"
+
++ LISTO! con comprobar SICK y la version de SAP Kernel en sm51 ya alcanza para saber que se realizó correctamente.
+
+
+## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
 
 https://aancos.com/2017/05/12/sap-gui-for-windows-7-50/
