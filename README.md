@@ -35,6 +35,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [DBA Cockpit - Objects Objref Not Assigned Dump](#dbacockpit---objects_objref_not_assigned-dump-notas-17-03-2025)
 - [Configurar ST03N](#configurar-st03n)
 - [Error 403 Web Dynpros](#error-403-web-dynpros)
+- [Crear un certificado SSL](#crear-un-certificado-ssl)
 - [SWNC Tcoll Starter - No Authorization for Transaction ST07](#swnc_tcoll_starter---no-authorization-for-transaction-st07)
 - [IPv4](#ipv4)
 - [Resource Temporarily Unavailable - Partner X3200 Not Reached](#resource-temporarily-unavailable-partner-x3200-not-reached)
@@ -393,6 +394,21 @@ sap/public/bc
 sap/public/bc/ur
 sap/bc/webdynpro/sap/DBA_COCKPIT
 ```
+
+## Crear un certificado SSL
+
+Ingresaremos a la transacción STRUST<br>
+Nos posicionaremos en "SSL server Standard"<br>
+Elegimos CREATE del menu contextual, cambiamos el nombre para identificarlo<br>
+y hacemos click en el tick verde. <br>
+En caso de que ya existiera, elegimos Replace en cambio de querer reemplazarlo cuando esté vencido.<br>
+
+![image](https://github.com/user-attachments/assets/873a63a5-7b64-4d4d-8196-e83b982f1083)
+
+En caso de querer agregarlo al Certificate List, usaremos el boton de "Add to Certificate list"<br>
+
+![image](https://github.com/user-attachments/assets/cff82687-a184-4722-9fc3-33fc4896f3bc)
+
 
 ## SWNC_TCOLL_STARTER - No authorization for transaction ST07
 
