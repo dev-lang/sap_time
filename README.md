@@ -11,6 +11,54 @@ scripts probados en SAP GUI, en caso de presentar fallas instalar gui750_11-8000
 Se puede crear un cliente más en la transacción SCC4
 Usar las instrucciones solamente como referencia en pruebas iniciales pero crear un mandante independiente**
 
+# Índice
+
+- [Notas de instalación](#notas-de-instalación)
+- [Recomendación de configuración](#recomendacion-de-configuración)
+- [VMC container is not active on this application server](#vmc-container-is-not-active-on-this-application-server)
+- [Configuraciones exitosas de VM](#configuraciones-exitosas-de-vm)
+- [Files](#files)
+- [Linux SAP Ubuntu 18.10](#linux-sap-ubuntu-1810)
+- [Windows Server 2008 R2 - KB3004394 Obligatoria](#windows-server-2008-r2---kb3004394-obligatoria)
+- [Crítico: Instance xxxd00 reached state shutdown after having state starting giving up](#critico-instance-xxxd00-reached-state-shutdown-after-having-state-starting-giving-up)
+- [UAC](#uac)
+- [Log off](#log-off)
+- [Password](#password)
+- [Unable to find a database software package at xxsap-ase-db](#unable-to-find-a-database-software-package-at-xxsap-ase-db)
+- [Selección de exports](#selección-de-exports)
+- [Selección de exports automática](#selección-de-exports-automática)
+- [Microsoft C Runtimes 2012 Update 4](#microsoft-c-runtimes-2012-update-4)
+- [Port Forwarding Solo NAT](#port-forwarding-solo-nat)
+- [Instalación completa](#instalación-completa)
+- [Product Catalog](#product-catalog)
+- [No connect to database session terminated](#no-connect-to-database-session-terminated)
+- [DBA Cockpit - Objects Objref Not Assigned Dump](#dbacockpit---objects_objref_not_assigned-dump-notas-17-03-2025)
+- [Configurar ST03N](#configurar-st03n)
+- [Error 403 Web Dynpros](#error-403-web-dynpros)
+- [SWNC Tcoll Starter - No Authorization for Transaction ST07](#swnc_tcoll_starter---no-authorization-for-transaction-st07)
+- [IPv4](#ipv4)
+- [Resource Temporarily Unavailable - Partner X3200 Not Reached](#resource-temporarily-unavailable-partner-x3200-not-reached)
+- [CPU Timers Not Synchronized - Check Note 1036194](#cpu-timers-not-synchronized-check-note-1036194)
+- [A raise statement in program cl_gui_html_viewercp has raised exception condition](#a-raise-statement-in-program-cl_gui_html_viewercp-has-raised-exception-condition-cntl_error)
+- [Crear nuevo cliente](#crear-nuevo-cliente)
+- [Reiniciar instancia sin usar SAPMMC](#reiniciar-instancia-sin-usar-sapmmc)
+- [Fix No Default CO Address Has Been Maintained in the System](#fix-no-default-co-address-has-been-maint-in-the-system-create-an-address)
+- [Fix Address Doesn't Exist 22787 - SAP Note 1420281](#fix-address-doesnt-exist-22787--sap-note-1420281)
+- [STMS Configurar Ruta de Transporte Local entre Clientes 000 y 001](#stms-configurar-ruta-de-transporte-local-entre-clientes-000-y-001)
+- [Salir de Transacción Si No Funciona la Opción de Detener Transacción](#salir-de-transacción-si-no-funciona-la-opción-de-detener-transacción)
+- [Table Class Is C - Entries Are Only Imported to Client 000](#table-class-is-c-entries-are-only-imported-to-client-000)
+- [Client 000 Has Status Not Modifiable](#client-000-has-status-not-modifiable)
+- [The Data is Locked by User - And Can Be Displayed Only](#the-data-is-locked-by-user--and-can-be-displayed-only)
+- [Transporte de OTs entre Clientes](#transporte-de-ots-entre-clientes)
+- [System Unknown in Transport Management System](#system-unknown-in-transport-management-system)
+- [SU25 - PFCG Autorizaciones](#su25---pfcg-autorizaciones)
+- [Tracear Autorizaciones Pendientes Sin SU53](#tracear-autorizaciones-pendientes-sin-su53)
+- [Renovar Licencia - Habilitar Developer Key](#renovar-licencia--habilitar-developer-key)
+- [Activar SAP Scripting](#activar-sap-scripting)
+- [Actualizar Kernel Notas](#actualizar-kernel-notas)
+- [Referencias](#referencias)
+
+
 # NOTAS DE INSTALACIÓN:
 
 1. Se debe instalar el OS elegido (se ha probado Win2016 para ECC6 EHP6 y Win2012 R2 para ECC EHP8)
@@ -278,7 +326,7 @@ En caso de que sapinst no arranque de forma directa, podremos especificar de for
 
 sapinst.exe SAPINST_CONTROL_URL=product.catalog.xml
 
-## No connect to database, sesión terminated
+## No connect to database, session terminated
 
 En caso de intentar acceder a la instancia y que devuelva este mensaje, podremos revisar el log de la consola MMC
 encontraremos errores del tipo "SAP Basis System: Error in DB rollback/SyFlush, return code  000256" o "Database: SQL error 30046  occurred; work process in reconnect status",
