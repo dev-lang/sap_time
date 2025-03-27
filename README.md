@@ -409,6 +409,18 @@ En caso de querer agregarlo al Certificate List, usaremos el boton de "Add to Ce
 
 ![image](https://github.com/user-attachments/assets/cff82687-a184-4722-9fc3-33fc4896f3bc)
 
+Con el programa SSF_ALERT_CERTEXPIRE podremos en el futuro ver si expiran 
+
+![image](https://github.com/user-attachments/assets/6889f907-4aa6-4326-b5f8-8de7302a6405)
+
+En la siguiente carpeta encontraremos los archivos PSE:
+
+```
+C:\usr\sap\NSP\DVEBMGS00\sec
+```
+
+![image](https://github.com/user-attachments/assets/c45e6f5f-053e-4baf-ac1d-6186c0d91998)
+
 
 ## SWNC_TCOLL_STARTER - No authorization for transaction ST07
 
