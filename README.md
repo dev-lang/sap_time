@@ -776,4 +776,12 @@ https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-inst
 
 https://aancos.com/2017/05/12/sap-gui-for-windows-7-50/
 
-unzip para SAP_ECC6_EHP6_Source: https://sourceforge.net/projects/gnuwin32/files/unzip/5.51-1/unzip-5.51-1-bin.zip/download?use_mirror=sitsa&download=
+unzip para SAP_ECC6_EHP6_Source:<br>
+https://sourceforge.net/projects/gnuwin32/files/unzip/5.51-1/unzip-5.51-1-bin.zip/download?use_mirror=sitsa&download=
+
+Otras referencias útiles:<br>
+
+http://sapbasisinfo.com/<br>
+https://www.sapbasiseasy.com/<br>
+https://www.saptechnicalguru.com/<br>
+https://www.se80.co.uk/<br>
