@@ -72,10 +72,14 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
    para la ECC6 debe tener una estructura similar a la siguiente:<br>
    ![image](https://github.com/dev-lang/sap_time/assets/56205122/76b6d92b-82c9-430f-864b-7efce40caa83)<br>
    y el ejemplo del .bat funcionando:<br>
-   ![image](https://github.com/dev-lang/sap_time/assets/56205122/ca7e12ec-840f-439d-a92a-acb412eb2ec1)
+   ![image](https://github.com/dev-lang/sap_time/assets/56205122/ca7e12ec-840f-439d-a92a-acb412eb2ec1)<br>
+   Para la ECC7 debe quedar de esta forma:<br>
+   ![image](https://github.com/user-attachments/assets/5c6b2c6b-6427-44e6-b829-25717be9fdc8)<br>
 
+En el siguiente enlace se dejaron los archivos exe para descomprimir en cualquiera de los casos (ECC7, ECC6 o ECC8):<br>
+https://archive.org/details/sapinst-tools
 
-6. Ejecutar .BAT y seguir las instrucciones y notas de este README
+7. Ejecutar .BAT y seguir las instrucciones y notas de este README
 
 # Recomendacion de configuración
 
@@ -168,6 +172,7 @@ Descripción rápida de uso de cada archivo (no necesariamente se requiere el us
 | 2016_DISABLE_UAC_EHP6.ps1        | Deshabilita UAC en Windows Server 2016                                 |
 | SAP_ECC6_EHP6_Source.bat         | [WIN2016] Prepara la instalación para ECC6 EHP6                          |
 | ECC6_EHP8_ws2012.bat             | [WIN2012] Prepara la instalación de ECC6 EHP8 en Windows 2012           |
+| ECC6_EHP7.bat			   | [WIN] Prepara la instalación de ECC6 EHP7 (probado en WS2016)		|
 | ECC6_EHP8.bat                    | Prepara la instalación de ECC6 EHP8                                      |
 | comp-readme.txt                  | Notas sobre el Código de la Compañía y PFCG                               |
 | byebyetimer.bat                  | Desactiva la configuración de hora y realiza varias configuraciones para SAP Netweaver en Windows Server 2003 |
