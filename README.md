@@ -54,6 +54,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [System Unknown in Transport Management System](#system-unknown-in-transport-management-system)
 - [SU25 - PFCG Autorizaciones](#su25---pfcg-autorizaciones)
 - [Tracear Autorizaciones Pendientes Sin SU53](#tracear-autorizaciones-pendientes-sin-su53)
+- [FIX Autorizaciones BATCH - SM36 user is no authorized to schedule program](#sm36-user--is-not-authorized-to-schedule-program--as-a-background-job)
 - [Renovar Licencia - Habilitar Developer Key](#renovar-licencia--habilitar-developer-key)
 - [Activar SAP Scripting](#activar-sap-scripting)
 - [Actualizar Kernel Notas](#actualizar-kernel-notas)
@@ -688,6 +689,27 @@ Deberemos ejecutar SU25 en caso de ser necesario.
 
 -Podremos utilizar STAUTHTRACE para setear un trace a un usuario para asignarle los objetos y autorizaciones<br>
 al rol asociado a un usuario por medio de PFCG. 
+
+## SM36 User && is not authorized to schedule program && as a background job
+
+El usuario de BATCH necesita autorizaciones de acuerdo al Authorization Group del programa que necesitamos ejecutar.<br>
+En la transacción SE38 podremos revisar esto haciendo un Display al Subobjet Attributes:<br>
+
+![image](https://github.com/user-attachments/assets/4ae271bd-36b2-4437-a9ba-c037fa1d64a1)
+
+Identificado el valor, que en este caso es SSAA, procederemos a agregarlo a un rol existente o nuevo:
+
+![image](https://github.com/user-attachments/assets/2c8a34e8-719a-45db-bfdd-a608a0df6ee1)
+
+En caso de querer importarlo por una Orden de Transporte, recordar marcar "Ignore Non-Permitted Table Class" si llega a dar error.
+
+![image](https://github.com/user-attachments/assets/f9dea9ae-3a06-42b5-943f-56f5d0749aff)
+
+Una vez preparado el ROL en el sistema, procederemos a agregarlo por medio de la transacción SU01 y probaremos a agregar el paso al job:
+
+![image](https://github.com/user-attachments/assets/812a030d-0463-4f45-ac82-ce3c1ade0f14)
+
+Si no da error, ya tenemos permisos para schedulear un job con un Z con authorizations SSAA
 
 ## RENOVAR LICENCIA / HABILITAR DEVELOPER KEY
 
