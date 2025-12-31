@@ -34,6 +34,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [No connect to database session terminated](#no-connect-to-database-session-terminated)
 - [DBA Cockpit - Objects Objref Not Assigned Dump](#dbacockpit---objects_objref_not_assigned-dump-notas-17-03-2025)
 - [Configurar ST03N](#configurar-st03n)
+- [FIX COMPUTE_BCD_OVERFLOW / BCD_FIELD_OVERFLOW en ST06/RSHOST10](#fix-compute_bcd_overflow--bcd_field_overflow-en-st06rshost10)
 - [Error 403 Web Dynpros](#error-403-web-dynpros)
 - [Crear un certificado SSL](#crear-un-certificado-ssl)
 - [SWNC Tcoll Starter - No Authorization for Transaction ST07](#swnc_tcoll_starter---no-authorization-for-transaction-st07)
@@ -385,6 +386,82 @@ JOB NAME: SAP_COLLECTOR_FOR_PERFMONITOR
 STEP:   RSCOLL00
 USUARIO: CON PERMISOS POR ROL en OBJETOS S_BTCH_ADM (*), S_BTCH_JOB (PLAN, RELE) y S_BTCH_NAM (*)
 CONDICION: PERÍODICA (Hourly)
+```
+
+## FIX COMPUTE_BCD_OVERFLOW / BCD_FIELD_OVERFLOW en ST06/RSHOST10
+
+### PASO 1: Por SE38 crear una copia de RSHOST10 y llamarla ZRSHOST10
+Modificar y agregar el siguiente código (buscar línea 2071):
+
+#### NOTA: El fix es un workaround, no se tiene en cuenta SE11, sino que se pone un máximo al contador para que no exceda el tamaño del valor aceptado por el data type
+
+```
+* --------------- CPU (Z-fix activo) ---------------------------
+READ TABLE TA_CPU_ALL INDEX 1.
+
+CONSTANTS c_cpu_max TYPE p LENGTH 7 DECIMALS 2 VALUE '99999.99'.
+DATA lv_tmp_f TYPE f.
+
+*----------------------
+* CPU LOAD 1
+*----------------------
+lv_tmp_f = TA_CPU_ALL-LOAD1_AVG / 100.
+IF lv_tmp_f > c_cpu_max.
+  OSMON_INT-CPU_LOAD1 = c_cpu_max.
+ELSE.
+  OSMON_INT-CPU_LOAD1 = lv_tmp_f.
+ENDIF.
+
+*----------------------
+* CPU LOAD 5
+*----------------------
+lv_tmp_f = TA_CPU_ALL-LOAD5_AVG / 100.
+IF lv_tmp_f > c_cpu_max.
+  OSMON_INT-CPU_LOAD5 = c_cpu_max.
+ELSE.
+  OSMON_INT-CPU_LOAD5 = lv_tmp_f.
+ENDIF.
+
+*----------------------
+* CPU LOAD 15
+*----------------------
+lv_tmp_f = TA_CPU_ALL-LOAD15_AVG / 100.
+IF lv_tmp_f > c_cpu_max.
+  OSMON_INT-CPU_LOAD15 = c_cpu_max.
+ELSE.
+  OSMON_INT-CPU_LOAD15 = lv_tmp_f.
+ENDIF.
+
+*----------------------
+* Otros campos de CPU
+*----------------------
+OSMON_INT-CPU_USER   = TA_CPU_ALL-USR_TOTAL.
+OSMON_INT-CPU_SYSTEM = TA_CPU_ALL-SYS_TOTAL.
+OSMON_INT-CPU_IDLE   = TA_CPU_ALL-IDLE_TOTAL.
+
+IF IS_IO_WAIT_VALID = 1.
+  OSMON_INT-CPU_ID_TRU = TA_CPU_ALL-IDLE_TRUE.
+  OSMON_INT-CPU_IOWAIT = TA_CPU_ALL-WAIT_TRUE.
+ELSE.
+  OSMON_INT-CPU_ID_TRU = -1.
+  OSMON_INT-CPU_IOWAIT = -1.
+ENDIF.
+
+OSMON_INT-CPU_NBRCPU = TA_CPU_ALL-NBR_CPU.
+OSMON_INT-CPU_SYSC_S = TA_CPU_ALL-SYSC_SEC.
+OSMON_INT-CPU_INT_S  = TA_CPU_ALL-INT_SEC.
+OSMON_INT-CPU_CS_S   = TA_CPU_ALL-CS_SEC.
+```
+
+### PASO 2: Hacer Check, Guardar y Activar
+### PASO 3: Crear por SE93 una transacción Z
+
+```
+Transaction Code: ZST06
+Short Text: Z FIX Operating System Monitor
+Start Object: Dialog Transaction o Report Transaction
+Program: ZRSHOST10
+Auth: S_ADMI_FCD
 ```
 
 ## Error 403 web dynpros
