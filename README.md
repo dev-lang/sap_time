@@ -459,7 +459,7 @@ OSMON_INT-CPU_CS_S   = TA_CPU_ALL-CS_SEC.
 ```
 Transaction Code: ZST06
 Short Text: Z FIX Operating System Monitor
-Start Object: Dialog Transaction o Report Transaction
+Start Object: Report Transaction
 Program: ZRSHOST10
 Auth: S_ADMI_FCD
 ```
