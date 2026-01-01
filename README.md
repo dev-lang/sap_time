@@ -17,6 +17,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Recomendación de configuración](#recomendacion-de-configuración)
 - [VMC container is not active on this application server](#vmc-container-is-not-active-on-this-application-server)
 - [PID -1 / Work Processes en Stopped / Dumps](#pid--1--work-processes-en-stopped--dumps)
+- [Operation mode differs](#operation-mode-differs)
 - [Configuraciones exitosas de VM](#configuraciones-exitosas-de-vm)
 - [Files](#files)
 - [Linux SAP Ubuntu 18.10](#linux-sap-ubuntu-1810)
@@ -139,6 +140,19 @@ taskkill /f /im sapstartsrv.exe
 
 3- Volver a levantar instancia desde MMC<br>
 4- Comprobar Status por SM50 hasta que se acomoden<br>
+
+## Operation mode differs
+
+Es normal que RZ03 diga esto cuando haya una diferencia entre lo reportado por RZ03 en Active op. mode y los workprocesses activos. Puede tardar un par de minutos en sincronizar. Si despues de un rato, no se sincroniza, realizar los siguientes check:
+
+0 - Comprobar en SM50 que no existan procesos en HOLD con reason MSOP
+1 - Comprobar con RZ03 los timetable y operation mode activo<br>
+2 - Comprobar que los work processes definidos en RZ04 se reflejen en SM50 según el operation mode activo<br>
+3 - Realizar un Consistency Check en RZ04 (operation modes)<br>
+4 - De ser necesario, comprobar en RZ10 que todos los perfiles se hayan importado correctamente (Default profile, Instance profile y Start profile)<br>
+5 - Hacer un "Check all profiles" de "Active Servers" en RZ10<br>
+6 - De no aplicarse, reiniciar la instancia desde SM51 para ajustar el Operation Mode.
+
 
 # CONFIGURACIONES EXITOSAS (DE VM):
 
