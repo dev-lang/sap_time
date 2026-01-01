@@ -129,16 +129,16 @@ Esto soluciona tambien el "Java is not active"
 
 ## PID -1 / Work Processes en Stopped / Dumps
 
-1- Ingresar a servidor de instancia y hacer un HARD STOP por MMC
-2- Hacer taskkill a sapstartsrv.exe y disp+work.exe
+1- Ingresar a servidor de instancia y hacer un HARD STOP por MMC<br>
+2- Hacer taskkill a sapstartsrv.exe y disp+work.exe<br>
 
 ```
 taskkill /f /im disp+work.exe
 taskkill /f /im sapstartsrv.exe
 ```
 
-3- Volver a levantar instancia desde MMC
-4- Comprobar Status por SM50 hasta que se acomoden
+3- Volver a levantar instancia desde MMC<br>
+4- Comprobar Status por SM50 hasta que se acomoden<br>
 
 # CONFIGURACIONES EXITOSAS (DE VM):
 
