@@ -16,6 +16,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Notas de instalación](#notas-de-instalación)
 - [Recomendación de configuración](#recomendacion-de-configuración)
 - [VMC container is not active on this application server](#vmc-container-is-not-active-on-this-application-server)
+- [PID -1 / Work Processes en Stopped / Dumps](#pid--1--work-processes-en-stopped--dumps)
 - [Configuraciones exitosas de VM](#configuraciones-exitosas-de-vm)
 - [Files](#files)
 - [Linux SAP Ubuntu 18.10](#linux-sap-ubuntu-1810)
@@ -125,6 +126,19 @@ vmcj/enable	on
 ```
 
 Esto soluciona tambien el "Java is not active"
+
+## PID -1 / Work Processes en Stopped / Dumps
+
+1- Ingresar a servidor de instancia y hacer un HARD STOP por MMC
+2- Hacer taskkill a sapstartsrv.exe y disp+work.exe
+
+```
+taskkill /f /im disp+work.exe
+taskkill /f /im sapstartsrv.exe
+```
+
+3- Volver a levantar instancia desde MMC
+4- Comprobar Status por SM50 hasta que se acomoden
 
 # CONFIGURACIONES EXITOSAS (DE VM):
 
