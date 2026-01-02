@@ -54,6 +54,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Client 000 Has Status Not Modifiable](#client-000-has-status-not-modifiable)
 - [The Data is Locked by User - And Can Be Displayed Only](#the-data-is-locked-by-user--and-can-be-displayed-only)
 - [Transporte de OTs entre Clientes](#transporte-de-ots-entre-clientes)
+- [Deshacer estado de orden liberada (Cambio de Status)](#deshacer-estado-de-orden-liberada-cambio-de-status)
 - [System Unknown in Transport Management System](#system-unknown-in-transport-management-system)
 - [SU25 - PFCG Autorizaciones](#su25---pfcg-autorizaciones)
 - [Tracear Autorizaciones Pendientes Sin SU53](#tracear-autorizaciones-pendientes-sin-su53)
@@ -782,6 +783,12 @@ Luego a través de la transacción SE10 deberíamos poder liberarla.
 
 En caso de que aparezca este error al hacer un Add manualmente, se debe hacer sin establecer un target client.
 Después de agregar la orden a la cola de stms, se debe agregar, no en el mismo momento de añadirla
+
+## Deshacer estado de orden liberada (Cambio de Status):
+
+Ejecutar el reporte RDDIT076, buscar la orden de transporte y cambiar el estado de R a D.
+
+Una vez hecho esto, podremos eliminar la OT del sistema por la transacción SE01. NO hacerlo en órdenes que se hayan implementado. 
 
 
 ## SU25 - PFCG (Autorizaciones)
