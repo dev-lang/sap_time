@@ -419,6 +419,17 @@ CONDICION: PERÍODICA (Hourly)
 
 ## FIX COMPUTE_BCD_OVERFLOW / BCD_FIELD_OVERFLOW en ST06/RSHOST10
 
+> ⚠️ **NOTA IMPORTANTE** ⚠️
+>
+> Antes de continuar con este paso, se debe **ACTUALIZAR EL KERNEL A `722_EXT_REL`** para solucionar el dump.
+>
+> 💡 En caso de no poseer el archivo `.SAR` correspondiente  
+> (se ha probado el **Kernel Patch 1400** con **DBSL Patch 1400**), se puede:
+>
+> 1. Generar una transacción nueva por `SE93`.
+> 2. Adjuntar el `Z` creado por `SE38` con el siguiente fix.
+
+
 ### PASO 1: Por SE38 crear una copia de RSHOST10 y llamarla ZRSHOST10
 Modificar y agregar el siguiente código (buscar línea 2071):
 
