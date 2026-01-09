@@ -17,6 +17,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Recomendación de configuración](#recomendacion-de-configuración)
 - [VMC container is not active on this application server](#vmc-container-is-not-active-on-this-application-server)
 - [PID -1 / Work Processes en Stopped / Dumps](#pid--1--work-processes-en-stopped--dumps)
+- [Different ROLL addresses -Workaround-](#different-roll-addresses-workaround)
 - [Operation mode differs](#operation-mode-differs)
 - [Configuraciones exitosas de VM](#configuraciones-exitosas-de-vm)
 - [Files](#files)
@@ -141,6 +142,10 @@ taskkill /f /im sapstartsrv.exe
 
 3- Volver a levantar instancia desde MMC<br>
 4- Comprobar Status por SM50 hasta que se acomoden<br>
+
+## Different ROLL addresses [Workaround]
+
+En caso de que los workprocesses no arranquen y que en SM50 se vea más de 1 WP en status Stopped con PID -1 y reiniciar servicios, instancias y server no solucione el problema o que siga apareciendo, será necesario actualizar el kernel siguiendo los pasos que se incluyen en [Actualizar Kernel Notas](#actualizar-kernel-notas)
 
 ## Operation mode differs
 
