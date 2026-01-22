@@ -507,9 +507,9 @@ Activar los siguientes servicios:
 ![image](https://github.com/user-attachments/assets/473ff3b6-1998-4427-976e-e8b6a6b8b84a)
 
 ```
-sap/public/bc
-sap/public/bc/ur
-sap/bc/webdynpro/sap/DBA_COCKPIT
+/sap/public/bc
+/sap/public/bc/ur
+/sap/bc/webdynpro/sap/DBA_COCKPIT
 ```
 
 ## Crear un certificado SSL
