@@ -517,6 +517,15 @@ Activar los siguientes servicios:
 /sap/bc/webdynpro/sap/DBA_COCKPIT
 ```
 
+De ser necesario activar más servicios podremos buscar por la misma transacción.
+Por ejemplo el servicio "/sap/public/myssocntl" sería:
+
+__SERVICE PATH:__ /sap/public/  
+__ServiceName:__ MYSSOCNTL
+
+<img width="952" height="376" alt="image" src="https://github.com/user-attachments/assets/e9c11cc4-8b04-4e7b-9a81-26f7155f44f2" />
+
+
 ## Crear un certificado SSL
 
 Ingresaremos a la transacción STRUST<br>
