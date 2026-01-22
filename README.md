@@ -36,6 +36,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Product Catalog](#product-catalog)
 - [No connect to database session terminated](#no-connect-to-database-session-terminated)
 - [DBA Cockpit - Objects Objref Not Assigned Dump](#dbacockpit---objects_objref_not_assigned-dump-notas-17-03-2025)
+- [Error in configuration of SAP logon tickets](#error-in-configuration-of-sap-logon-tickets)
 - [Configurar ST03N](#configurar-st03n)
 - [FIX COMPUTE_BCD_OVERFLOW / BCD_FIELD_OVERFLOW en ST06/RSHOST10](#fix-compute_bcd_overflow--bcd_field_overflow-en-st06rshost10)
 - [Error 403 Web Dynpros](#error-403-web-dynpros)
@@ -404,6 +405,10 @@ La ultima edición funcional del perfil de instancia quedó asi (22/03/2025):
 
 
 Reiniciar AS y servicio de instancia
+
+## Error in configuration of SAP logon tickets
+
+Revisar parámetros de SSO por la transacción RZ11
 
 ## Configurar ST03N:
 
