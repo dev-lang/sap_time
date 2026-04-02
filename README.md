@@ -64,6 +64,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Renovar Licencia - Habilitar Developer Key](#renovar-licencia--habilitar-developer-key)
 - [Activar SAP Scripting](#activar-sap-scripting)
 - [Actualizar Kernel Notas](#actualizar-kernel-notas)
+- [Actualización de Support Packages y Addons](#actualizar-spaddons-mediante-spamsaint)
 - [Referencias](#referencias)
 
 
@@ -928,6 +929,42 @@ para que sea consistente la actualización.
 
 + LISTO! con comprobar SICK y la version de SAP Kernel en sm51 ya alcanza para saber que se realizó correctamente.
 
+## Actualizar SP/ADDONS mediante SPAM/SAINT
+
+> **Nota importante:** según lo que vayamos a aplicar deberemos abrir:
+
++ SPAM para actualizar Support Packages
++ SAINT para actualizar Addons
++ En caso de ser notas se usará la transacción SNOTE
++ Haremos las actualizaciones en cada uno de los ambientes. Podemos revisarla por STMS para validar la ruta.
+
+Como recordatorio de cada transacción, podremos usar las primeras dos letras de la transacción para identificar:
+
+**SPAM:** Support Packages  
+**SAINT:** SAP Addons
+
+PASO PREVIO: Ejecutar el reporte RTCCTOOL para ver los pendientes del sistema. 
+
+1. Ingresamos al servidor donde vamos a aplicar las actualizaciones de las notas de RTCCTOOL
+2. Abrimos el explorador y buscamos la carpeta /usr/sap/trans
+3. Pegamos los archivos .SAR en ese directorio
+
+```
+sapcar -xvf *.SAR
+```
+
+4. Una vez finalizada la descompresión de los archivos, abrimos SAPGUI
+5. Ingresamos al mandante 000 con usuario DDIC
+6. Vamos a SPAM e importamos mediante: Support Package > Load Packages > SAR archives from application server
+7. Una vez que hayamos importado, podremos usar el botón "Display" para ver una lista de lo que se haya importado nuevo
+8. Seleccionando el package que necesitamos importar al sistema, la primera etapa es ponerlo en QUEUE
+9. Luego regresamos a la pantalla principal y realizamos un transporte
+nota: en status podremos ver el avance del proceso de actualización
+10. Una vez hecho el paso 9, confirmaremos la aplicación
+11. Para la aplicación de Addons, usaremos la transacción SAINT
+12. El proceso en esta transacción es más intuitivo ya que corresponde seguir el proceso como se indica en la transacción
+13. Una vez que hayamos aplicados los cambios, podremos ejecutar el reporte RTCCTOOL para ver que no hayan quedado pendientes
+En caso de haber aplicado todo correctamente, se verá el reporte sin status en warnings. Pero pueden aparecer nuevas recomendaciones para aplicar.
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
