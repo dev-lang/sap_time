@@ -947,7 +947,7 @@ PASO PREVIO: Ejecutar el reporte RTCCTOOL para ver los pendientes del sistema.
 
 1. Ingresamos al servidor donde vamos a aplicar las actualizaciones de las notas de RTCCTOOL
 2. Abrimos el explorador y buscamos la carpeta /usr/sap/trans
-3. Pegamos los archivos .SAR en ese directorio
+3. Pegamos los archivos .SAR en ese directorio, abrimos un CMD como admin en la carpeta y ejecutamos
 
 ```
 sapcar -xvf *.SAR
