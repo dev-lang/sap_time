@@ -966,6 +966,119 @@ nota: en status podremos ver el avance del proceso de actualización
 13. Una vez que hayamos aplicados los cambios, podremos ejecutar el reporte RTCCTOOL para ver que no hayan quedado pendientes
 En caso de haber aplicado todo correctamente, se verá el reporte sin status en warnings. Pero pueden aparecer nuevas recomendaciones para aplicar.
 
+## Backup de base de datos Sybase (Método DUMP + ISQL)
+
+> **Nota:** reemplazar `ZAP` por el SID de SAP actual, y el nombre del archivo de dump por el generado (con su timestamp real).
+
+1. Ejecutar el script de dump
+
+```bash
+sybase_dump_db.bat ZAP
+```
+
+Esto genera el archivo en `C:\backup-SYB\ZAP_<timestamp>.dmp` junto con su log.
+
+2. Conectarse con isql
+
+> **Nota:** reemplazar password, servidor y usuario por los correctos.
+
+```bash
+isql -Usapsa -PSAPInstall.12 -SZAP -X
+```
+
+3. Verificación rápida del header
+
+No requiere espacio extra en disco. Sirve para confirmar rápido que el dump es legible y corresponde a lo esperado.
+
+Crear una base de test chica:
+
+```sql
+use master
+go
+create database ZAP_test on default = '30M'
+go
+```
+
+Verificar el header:
+
+```sql
+load database ZAP_test from 'C:\backup-SYB\ZAP_20260718_193921.dmp' with headeronly
+go
+```
+
+4. Verificación completa (opcional)
+
+Requiere espacio real equivalente al tamaño de la base original.
+
+Confirmar espacio disponible en el device:
+
+```sql
+sp_helpdevice
+go
+```
+
+Borrar la base de test chica y recrearla con el tamaño necesario (`for load` acelera la creación, evita inicialización completa):
+
+```sql
+use master
+go
+drop database ZAP_test
+go
+use master
+go
+create database ZAP_test on default = '105000M' for load
+go
+```
+
+Correr la verificación completa:
+
+```sql
+load database ZAP_test from 'C:\backup-SYB\ZAP_20260718_193921.dmp' with verify = full
+go
+```
+
+5. Limpieza final
+
+Una vez confirmado que el dump verificó correctamente:
+
+```sql
+use master
+go
+drop database ZAP_test
+go
+```
+
+NOTA: 
+
+Si aparece el siguiente error:
+Data on dump will not fit into current database. Need 100352 Mbyte database.
+
+Hay que crear un nuevo disco con el espacio suficiente para levantar la DB:
+
+```sql
+disk init
+name = 'zap_test_dev',
+physname = 'C:\backup-SYB\zap_test_dev.dat',
+size = '105000M'
+go
+```
+
+Despues creamos la DB sobre ese disco nuevo:
+
+```sql
+use master
+go
+create database ZAP_test on zap_test_dev = '105000M' for load
+go
+```
+
+Y ejecutamos la verificación completa:
+
+```sql
+load database ZAP_test from 'C:\backup-SYB\ZAP_20260718_193921.dmp' with verify = full
+go
+```
+
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
 
