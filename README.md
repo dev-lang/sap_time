@@ -1162,6 +1162,42 @@ select count(*) from sysobjects where type = 'U'
 go
 ```
 
+## Prueba de integridad de datos (comparación por count):
+
+- Ejecutamos la siguiente consulta contra la DB del sistema:
+
+> NOTA: En caso de que de error "T000 not found. Specify owner.objectname",
+> Ejecutaremos la siguiente consulta para reemplazar SAPSR3 por el user_name(uid) que nos devuelva la consulta:
+> ```sql
+> use ZAP
+> go
+> select user_name(uid), name from sysobjects where name = 'T000'
+> go
+> ```
+> <img width="768" height="422" alt="image" src="https://github.com/user-attachments/assets/117c0320-862e-49bd-94fd-ec5129dfa828" />
+
+
+
+```sql
+use ZAP
+go
+select count(*) from SAPSR3.T000
+go
+```
+
+- Luego ejecutamos lo mismo contra la base de datos _DR:
+
+
+```sql
+use ZAP_DR
+go
+select count(*) from SAPSR3.T000
+go
+```
+
+<img width="758" height="361" alt="image" src="https://github.com/user-attachments/assets/f3053532-38d8-439e-92b6-bcd1974ef2b3" />
+
+
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
 
