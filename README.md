@@ -984,6 +984,10 @@ Esto genera el archivo en `C:\backup-SYB\ZAP_<timestamp>.dmp` junto con su log.
 > **Nota:** reemplazar password, servidor y usuario por los correctos.
 
 ```bash
+set SYBASE=C:\sybase\ZAP
+set SYBASE_OCS=OCS-15_0
+set PATH=%SYBASE%\%SYBASE_OCS%\dll;%SYBASE%\%SYBASE_OCS%\bin;%PATH%
+cd C:\sybase\ZAP\OCS-15_0\bin
 isql -Usapsa -PSAPInstall.12 -SZAP -X
 ```
 
