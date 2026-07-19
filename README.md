@@ -1393,6 +1393,58 @@ New SQL Server stand-alone installation or add features to an existing installat
 
 ### 4. Una vez finalizada la instalación, podemos usar SSMS para comprobar que esté online.
 
+## Migración de esquema y datos con SSMA (Sybase → SQL Server)
+
+Con SQL Server instalado, abrimos SSMA:
+
+- Conectamos al servidor SQL Server 2016 que acabamos de crear.
+- En base de datos, ponemos el nombre de la base de datos destino.
+- Si pregunta, confirmamos la creación.
+- <img width="458" height="193" alt="image" src="https://github.com/user-attachments/assets/d4cfa90f-9be3-4527-ac26-583edbc2c502" />
+- Conectamos a la base de Sybase mediante el connection string.
+- <img width="907" height="481" alt="image" src="https://github.com/user-attachments/assets/f24fcbec-a8e7-4904-9d91-b066ed2b6cc2" />
+
+> **Nota:** es importante que la instancia esté levantada para poder conectarnos.
+
+### Selección de objetos a migrar
+En el **Sybase Metadata Explorer** (panel izquierdo), navegamos hasta `ZAP` → `SAPSR3` → tablas. Dado que son muchas tablas, para una primera prueba conviene tildar solo una o dos tablas chicas y conocidas (en este caso `T000` y `USR02`) en lugar de seleccionar todo.
+
+<img width="862" height="291" alt="image" src="https://github.com/user-attachments/assets/005aa6dd-d08d-4e1d-a8c3-addb40bcb846" />
+<img width="732" height="460" alt="image" src="https://github.com/user-attachments/assets/9592d1c3-ecf1-4db5-bb75-8fd738bb6b2b" />
+
+### Convertir esquema
+Click derecho sobre la selección → **Convert Schema** (podemos usar directamente el botón de la barra superior).
+
+<img width="984" height="309" alt="image" src="https://github.com/user-attachments/assets/e75addfb-927d-40b0-8f08-1c2fb551276d" />
+
+> **Nota:** en la prueba, "Convert Schema" no procesó ambas tablas seleccionadas juntas — hubo que hacerlo de a una tabla por vez (click derecho sobre cada tabla individual → Convert Schema).
+
+SSMA analiza la estructura de Sybase y genera el DDL equivalente para SQL Server, mostrando advertencias en el panel de salida si algo no traduce 1:1 (tipos de datos, longitudes, etc.).
+
+### Revisar el esquema convertido
+En el **SQL Server Metadata Explorer** (panel derecho) se puede inspeccionar el DDL generado antes de aplicarlo contra la base real.
+
+<img width="945" height="473" alt="image" src="https://github.com/user-attachments/assets/030fcba9-3237-4158-8d32-dc9d2471f876" />
+
+
+### Sincronizar con SQL Server
+Click derecho sobre el esquema convertido → **Synchronize with Database**. Se abre una ventana comparando el metadata local contra lo existente en SQL Server. Confirmar con **OK** para aplicar.
+
+<img width="784" height="344" alt="image" src="https://github.com/user-attachments/assets/e41a5995-7ed9-40e4-b8f2-1b4e7755c240" />
+<img width="1125" height="550" alt="image" src="https://github.com/user-attachments/assets/e08ca29d-109c-41e4-b457-cf2516217a2d" />
+
+### Migrar los datos
+Una vez sincronizado el esquema, seleccionar la(s) tabla(s) → click derecho → **Migrate Data**.
+
+<img width="802" height="352" alt="image" src="https://github.com/user-attachments/assets/7b0d1c84-3631-4603-9bf7-5f1fdd2d63a7" />
+
+Al finalizar, SSMA muestra un **Data Migration Report** con el resultado por tabla:
+
+<img width="1134" height="578" alt="image" src="https://github.com/user-attachments/assets/0af030a6-b8e6-4fd3-bdb9-a481361b92bd" />
+
+| Tabla | Total Rows | Migrated Rows | Success Rate |
+|---|---|---|---|
+| USR02 | 11 | 11 | 100.00% |
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
