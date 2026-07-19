@@ -66,6 +66,10 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Actualizar Kernel Notas](#actualizar-kernel-notas)
 - [Actualización de Support Packages y Addons](#actualizar-spaddons-mediante-spamsaint)
 - [Backup de DB SYB - método ISQL](#backup-de-base-de-datos-sybase-método-dump--isql)
+- [Prueba de recuperación completa (restore + online)](#prueba-de-recuperación-completa-restore--online)
+- [Prueba de integridad de datos (comparación por count)](#prueba-de-integridad-de-datos-comparación-por-count)
+- [Prueba de integridad de datos (comparación de agregados)](#prueba-de-integridad-de-datos-comparación-de-agregados)
+- [Restore completo sobre base productiva (Disaster Recovery real)](#restore-completo-sobre-base-productiva-disaster-recovery-real)
 - [Referencias](#referencias)
 
 
