@@ -1446,6 +1446,38 @@ Al finalizar, SSMA muestra un **Data Migration Report** con el resultado por tab
 |---|---|---|---|
 | USR02 | 11 | 11 | 100.00% |
 
+## Explorar la base con DBeaver (alternativa visual tipo SSMS)
+
+Como alternativa para explorar la estructura y datos sin pasar por isql, se puede conectar **DBeaver** directamente vía el driver **Sybase jConnect (JDBC)**, sin depender del DSN ODBC configurado para SSMA.
+
+### 1. Descargar e instalar DBeaver
+
+https://dbeaver.io/files/dbeaver-ce-latest-windows-x86_64.exe
+
+### 2. Configurar la conexión
+
+Datos de conexión:
+
+| Campo | Valor |
+|---|---|
+| Host | `sapzrv` |
+| Port | `4901` |
+| Database/Schema | `ZAP` |
+| Usuario | `sapsa` |
+| Encrypt Password | tildado |
+
+<img width="938" height="631" alt="image" src="https://github.com/user-attachments/assets/971921bc-4b7d-49f6-b980-9d92945eaa3b" />
+
+
+### 3. Consultar tablas de SAP
+
+Una vez conectado, puede ser necesario el naming completo de tres partes si no se seteó el contexto de base:
+
+```sql
+use ZAP;
+select BNAME, USTYP, TRDAT, GLTGV, GLTGB, LOCNT from ZAP.SAPSR3.USR02
+```
+
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
 
