@@ -1111,6 +1111,56 @@ Device dropped.
 
 se puede ejecutar ```del C:\backup-SYB\zap_test_dev.dat``` para eliminar el archivo del disco.
 
+## Prueba de recuperación completa (restore + online)
+
+> Nota: despues de ejecutar la prueba, deberemos ejecutar los pasos de limpieza correspondientes.
+
+- Primero abrimos CMD y pegamos el siguiente bloque:
+
+```
+set SYBASE=C:\sybase\ZAP
+set SYBASE_OCS=OCS-15_0
+set PATH=%SYBASE%\%SYBASE_OCS%\dll;%SYBASE%\%SYBASE_OCS%\bin;%PATH%
+cd C:\sybase\ZAP\OCS-15_0\bin
+isql -Usapsa -PSAPInstall.12 -SZAP -X
+```
+
+- Creamos el disco a donde irá la base de datos:
+
+```sql
+disk init
+name = 'zap_dr_dev',
+physname = 'C:\backup-SYB\zap_dr_dev.dat',
+size = '105000M'
+go
+```
+
+- Cargamos la base de datos nueva:
+
+```sql
+use master
+go
+create database ZAP_DR on zap_dr_dev = '105000M' for load
+go
+load database ZAP_DR from 'C:\backup-SYB\ZAP_20260718_215442.dmp'
+go
+```
+
+- Ponemos ONLINE la base de datos:
+
+```sql
+online database ZAP_DR
+go
+```
+
+- Probamos una consulta:
+
+```sql
+use ZAP_DR
+go
+select count(*) from sysobjects where type = 'U'
+go
+```
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
