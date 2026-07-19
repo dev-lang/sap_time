@@ -1197,6 +1197,29 @@ go
 
 <img width="758" height="361" alt="image" src="https://github.com/user-attachments/assets/f3053532-38d8-439e-92b6-bcd1974ef2b3" />
 
+## Prueba de integridad de datos (comparación de agregados)
+
+- Ejecutamos la siguiente consulta contra la DB productiva:
+```sql
+use ZAP
+go
+select count(*), min(MANDT), max(MANDT), count(distinct MANDT) 
+from SAPSR3.T000
+go
+```
+- Luego ejecutamos lo mismo contra la base restaurada:
+```sql
+use ZAP_DR
+go
+select count(*), min(MANDT), max(MANDT), count(distinct MANDT) 
+from SAPSR3.T000
+go
+```
+- Comparamos los 4 valores devueltos por ambas consultas: si coinciden exactamente, confirmamos integridad de contenido más allá de la simple cantidad de filas.
+
+<img width="759" height="404" alt="image" src="https://github.com/user-attachments/assets/a0ae1c0b-108f-4149-9923-111fd5202125" />
+
+
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
