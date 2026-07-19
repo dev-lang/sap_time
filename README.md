@@ -1365,7 +1365,33 @@ DSN=ZAP_ODBC;UID=sapsa;PWD=SAPInstall.12
 ```
 <img width="920" height="486" alt="image" src="https://github.com/user-attachments/assets/807010d1-4e3c-4689-afb9-6ac6cdaf4b3b" />
 
+## Instalación de SQL Server 2016 Developer Edition (destino de la migración)
 
+> NOTA: el instalador SSEI (bootstrapper) sigue siendo accesible por link directo.
+
+### 1. Descargar el instalador
+https://download.microsoft.com/download/c/5/0/c50d5f5e-1adf-43eb-bf16-205f7eab1944/SQLServer2016-SSEI-Dev.exe
+
+Ejecutar el `.exe` y elegir **Personalizado** (requiere conexión a internet activa, descarga el paquete completo ~4GB en el momento).
+
+### 2. Instalación desde el SQL Server Installation Center
+
+Una vez descargado, se abre el **SQL Server Installation Center**. Elegir:
+New SQL Server stand-alone installation or add features to an existing installation
+
+<img width="775" height="229" alt="image" src="https://github.com/user-attachments/assets/e9ea7210-4cb2-4653-9ea6-81dbf1ef01f7" />
+
+### 3. Pasos del wizard
+
+- **Feature Selection:** tildar como mínimo **Database Engine Services**
+- <img width="794" height="382" alt="image" src="https://github.com/user-attachments/assets/91de25a5-c09f-4d0a-9c41-b46b9b100288" />
+- **Instance Configuration:** anotar el nombre de instancia elegido (Default o nombrada)
+- **Server Configuration:** dejar cuentas de servicio por default
+- **Database Engine Configuration:** elegir **Mixed Mode (SQL Server authentication and Windows authentication)** y setear password del usuario `sa` — necesario para conectar desde SSMA con usuario/password
+- <img width="793" height="342" alt="image" src="https://github.com/user-attachments/assets/c99487be-a4a9-4215-947f-4a620dfcb240" />
+
+
+### 4. Una vez finalizada la instalación, podemos usar SSMS para comprobar que esté online.
 
 
 ## Referencias:
