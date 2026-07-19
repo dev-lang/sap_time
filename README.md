@@ -70,6 +70,10 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Prueba de integridad de datos (comparación por count)](#prueba-de-integridad-de-datos-comparación-por-count)
 - [Prueba de integridad de datos (comparación de agregados)](#prueba-de-integridad-de-datos-comparación-de-agregados)
 - [Restore completo sobre base productiva (Disaster Recovery real)](#restore-completo-sobre-base-productiva-disaster-recovery-real)
+- [Instalación de driver ODBC Sybase y conexión con SSMA](#instalación-de-driver-odbc-sybase-y-conexión-con-ssma)
+- [Instalación de SQL Server 2016 Developer Edition (destino de la migración)](#instalación-de-sql-server-2016-developer-edition-destino-de-la-migración)
+- [Migración de esquema y datos con SSMA (Sybase → SQL Server)](#migración-de-esquema-y-datos-con-ssma-sybase--sql-server)
+- [Explorar la base con DBeaver (alternativa visual tipo SSMS)](#explorar-la-base-con-dbeaver-alternativa-visual-tipo-ssms)
 - [Referencias](#referencias)
 
 
