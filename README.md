@@ -65,6 +65,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Activar SAP Scripting](#activar-sap-scripting)
 - [Actualizar Kernel Notas](#actualizar-kernel-notas)
 - [Actualización de Support Packages y Addons](#actualizar-spaddons-mediante-spamsaint)
+- [Backup de DB SYB - método ISQL](#backup-de-base-de-datos-sybase-método-dump--isql)
 - [Referencias](#referencias)
 
 
@@ -1078,6 +1079,34 @@ Y ejecutamos la verificación completa:
 load database ZAP_test from 'C:\backup-SYB\ZAP_20260718_193921.dmp' with verify = full
 go
 ```
+
+Limpieza final
+
+Una vez confirmado que el dump verificó correctamente:
+
+```sql
+use master
+go
+drop database ZAP_test
+go
+```
+
+```sql
+use master
+go
+sp_dropdevice zap_test_dev
+go
+```
+
+Cuando salga el mensaje:
+
+```
+Device dropped.
+(return status = 0)
+```
+
+se puede ejecutar ```del C:\backup-SYB\zap_test_dev.dat``` para eliminar el archivo del disco.
+
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
