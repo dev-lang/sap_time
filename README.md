@@ -1219,6 +1219,93 @@ go
 
 <img width="759" height="404" alt="image" src="https://github.com/user-attachments/assets/a0ae1c0b-108f-4149-9923-111fd5202125" />
 
+## Restore completo sobre base productiva (Disaster Recovery real)
+
+> **Nota:** este procedimiento sobreescribe la base indicada con el contenido del dump. Ejecutar solo con el sistema SAP detenido y con un dump ya verificado (ver sección de verificación de integridad).
+
+1. Frenar SAP y confirmar que los procesos están detenidos
+
+```cmd
+cd C:\usr\sap\ZAP\DVEBMGS00\exe
+sapcontrol -nr 00 -user zapadm SAPInstall.12 -function Stop
+sapcontrol -nr 00 -user zapadm SAPInstall.12 -function GetProcessList
+```
+
+Confirmar que todos los procesos listados aparecen como `Stopped` antes de continuar.
+
+2. Conectarse a la base vía isql
+
+```cmd
+cd C:\sybase\ZAP\OCS-15_0\bin
+isql -Usapsa -PSAPInstall.12 -SZAP -X
+```
+
+3. Confirmar que no hay conexiones activas sobre la base
+
+```sql
+use master
+go
+sp_who
+go
+```
+
+Verificar que ningún proceso listado tenga `dbname = ZAP` (aparte de la propia sesión de isql, que se conecta contra `master`).
+
+4. Restaurar el dump sobre la base
+
+> **Nota:** reemplazar el nombre del archivo `.dmp` por el dump real a restaurar.
+
+```sql
+use master
+go
+load database ZAP from 'C:\backup-SYB\ZAP_20260718_215442.dmp'
+go
+```
+
+<img width="731" height="439" alt="image" src="https://github.com/user-attachments/assets/420073d5-b292-4113-b4d4-ea58d8ddce4b" />
+<img width="1156" height="573" alt="image" src="https://github.com/user-attachments/assets/edf0599b-5c99-4074-a724-c3b41582a233" />
+
+
+5. Poner la base online
+
+```sql
+online database ZAP
+go
+```
+
+<img width="913" height="216" alt="image" src="https://github.com/user-attachments/assets/702c3b06-9d1a-4919-8b60-171f97b31331" />
+
+
+6. Verificar que la base quedó consistente
+
+```sql
+sp_helpdb ZAP
+go
+```
+
+Confirmar que el `status` no muestre flags de `offline`, `recovering` o `suspect`, y que el tamaño y los devices coincidan con lo esperado.
+
+7. Reiniciar la instancia SAP
+
+```cmd
+cd C:\usr\sap\ZAP\DVEBMGS00\exe
+sapcontrol -nr 00 -user zapadm SAPInstall.12 -function Start
+sapcontrol -nr 00 -user zapadm SAPInstall.12 -function GetProcessList
+```
+
+<img width="1247" height="181" alt="image" src="https://github.com/user-attachments/assets/0d7cdd5e-ba9b-4577-b7b8-a967b301d8da" />
+
+Confirmar que todos los procesos vuelven a estado `Running`/`Green`.
+
+<img width="863" height="121" alt="image" src="https://github.com/user-attachments/assets/c2e1b1fd-a081-4ee2-8b41-ceb2b8b2c91f" />
+
+
+8. Validar desde la aplicación
+
+Ingresar por SAP GUI y confirmar acceso normal (por ejemplo `SM04` para ver usuarios conectados, o una consulta simple en `SE16`).
+
+<img width="632" height="344" alt="image" src="https://github.com/user-attachments/assets/59a0fe4e-74ae-44ae-bbf2-7aeed4245e41" />
+<img width="1034" height="296" alt="image" src="https://github.com/user-attachments/assets/44c258aa-3f66-4e16-b584-a682a2b50503" />
 
 
 ## Referencias:
