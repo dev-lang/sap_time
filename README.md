@@ -1311,6 +1311,62 @@ Ingresar por SAP GUI y confirmar acceso normal (por ejemplo `SM04` para ver usua
 <img width="632" height="344" alt="image" src="https://github.com/user-attachments/assets/59a0fe4e-74ae-44ae-bbf2-7aeed4245e41" />
 <img width="1034" height="296" alt="image" src="https://github.com/user-attachments/assets/44c258aa-3f66-4e16-b584-a682a2b50503" />
 
+## Instalación de driver ODBC Sybase y conexión con SSMA
+
+### 1. Extraer el cliente ODBC de Sybase
+Descargar Sybase 15.7.0.132 (mismo paquete que corresponde a la versión del server ZAP).
+
+```cmd
+cd SYBASE_WINDOWS_X86_64
+sapcar -xvf DBCLIENT.SAR -R C:\sybase_client_extracted
+```
+
+### 2. Registrar el driver ODBC
+```cmd
+regsvr32 C:\sybase_client_extracted\sybodbc\sybdrvodb64.dll
+```
+
+### 3. Configurar el DSN de sistema
+Abrir el administrador ODBC de 64 bits:
+```cmd
+odbcad32.exe
+```
+
+En la pestaña **DSN de sistema**, agregar uno nuevo con el driver **Adaptive Server Enterprise**, y completar:
+
+| Campo | Valor |
+|---|---|
+| Data Source Name | `ZAP_ODBC` |
+| Description | `Conexión ZAP Sybase` |
+| Server Name (ASE Host Name) | `sapzrv` (hostname real, **no** el alias lógico `zap` del `sql.ini`) |
+| Server Port | `4901` |
+| Database Name | `ZAP` |
+| Logon ID | `sapsa` |
+
+<img width="579" height="483" alt="image" src="https://github.com/user-attachments/assets/53c1df9e-54a9-40df-a239-1241dff20428" />
+
+
+> **Importante:** en la pestaña **Connection**, tildar **"Encrypt Password"** — el server exige login encriptado, sin esto la conexión falla con el error `Adaptive Server requires encryption of the login password on the network`.
+
+<img width="402" height="139" alt="image" src="https://github.com/user-attachments/assets/b836141c-510f-4c4b-b24b-7198409f9246" />
+
+
+Verificar con **Test Connection** dentro de la configuración del DSN (debería devolver `Login Succeeded`).
+
+
+### 4. Instalar SSMA for Sybase
+Instalar `SSMAforSybase_9.5.0.msi`.
+
+### 5. Conectar SSMA a la base origen
+Al conectar desde SSMA, usar **"Advanced mode"** (no "Standard mode" — este último no permite forzar encriptación y falla con el mismo error del punto 3) y pegar la connection string usando el DSN ya configurado:
+
+```
+DSN=ZAP_ODBC;UID=sapsa;PWD=SAPInstall.12
+```
+<img width="920" height="486" alt="image" src="https://github.com/user-attachments/assets/807010d1-4e3c-4689-afb9-6ac6cdaf4b3b" />
+
+
+
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
