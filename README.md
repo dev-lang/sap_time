@@ -74,6 +74,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Instalación de SQL Server 2016 Developer Edition (destino de la migración)](#instalación-de-sql-server-2016-developer-edition-destino-de-la-migración)
 - [Migración de esquema y datos con SSMA (Sybase → SQL Server)](#migración-de-esquema-y-datos-con-ssma-sybase--sql-server)
 - [Explorar la base con DBeaver (alternativa visual tipo SSMS)](#explorar-la-base-con-dbeaver-alternativa-visual-tipo-ssms)
+- [TMS not configured for this SAP system](#tms-not-configured-for-this-sap-system)
 - [Referencias](#referencias)
 
 
@@ -1481,6 +1482,34 @@ Una vez conectado, puede ser necesario el naming completo de tres partes si no s
 use ZAP;
 select BNAME, USTYP, TRDAT, GLTGV, GLTGB, LOCNT from ZAP.SAPSR3.USR02
 ```
+
+## TMS not configured for this SAP System
+
+En caso de que la configuración se haya vuelto inconsistente, por ejemplo tras un System Rename, haremos los siguientes pasos:
+
+
+- Ingresar a STMS (USAR EL CLIENTE 000 y usuario DDIC)
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/ea185ad6-cfa5-41d8-8511-f5475d1ee6db" />
+
+- Presionar ENTER, nos sale un mensaje de información, lo ignoramos
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/b95a6f8e-6c99-400a-8f36-079ae692b6b4" />
+
+- En la ventana de TMS: Include System in Transport Domain, elegimos segundo botón:
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/4b9a0bf9-5027-4971-9c9b-de6ed158180f" />
+
+- En la ventana de TMS Configuratión, elegimos la opción de Configure New Domain
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/aba744d8-d662-484d-ade6-90741519f058" />
+
+- Guardamos el nuevo Transport Domain
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/3f806dbd-d8b3-4de3-96e0-6cced033eefa" />
+
+- y establecemos una contraseña cuando nos solicite (por ejemplo: BASTMS.01)
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/ca451a52-c8df-489a-b8d4-b270007057aa" />
+
+- Confirmar que en STMS ahora aparezca el Transp. Domain. y diga "You are logged onto the domain controller"
+<img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/c714e2bb-05cc-4c20-aa69-6f8129a84cd5" />
+
+- Despues se debe configurar la ruta de transporte, ver [STMS Configurar Ruta de Transporte Local entre Clientes 000 y 001](#stms-configurar-ruta-de-transporte-local-entre-clientes-000-y-001)
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
