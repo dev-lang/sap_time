@@ -746,7 +746,9 @@ Es recomendable igualmente eliminar el registro y crearlo de cero para que sea m
 
 ## STMS Configurar ruta de transporte local entre clientes 000 y 001
 
-Logueados en el cliente 000, vamos a "Transport Routes"
+Logueados en el cliente 000, ingresamos en STMS y hacemos click en "Transport Routes": 
+<img width="740" height="102" alt="image" src="https://github.com/user-attachments/assets/96ff1410-450b-401b-887d-3d0d1d184307" />
+
 Agregamos un single system y configuramos de la siguiente forma:<br>
 <img width="461" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/8988efb0-6738-4f8e-bb2d-d68c8f428b8b"><br>
 <img width="459" alt="image" src="https://github.com/dev-lang/sap_time/assets/56205122/4359dcae-6ffb-4721-9a53-9c305e42b5c2"><br>
@@ -754,8 +756,17 @@ Agregamos un single system y configuramos de la siguiente forma:<br>
 Es importante tambien configurar la ruta como "Consolidation" y el Target system/client en <ID>.001 con Transport Layer en SAP.
 Esto puede ser configurado desde el menú de Edit. Tener en cuenta que una vez activada la ruta, las opciones aparecerán en gris.
 
+<img width="980" height="471" alt="image" src="https://github.com/user-attachments/assets/b9b169f6-4813-46e1-93db-394d58edf5e5" />
+<img width="980" height="471" alt="image" src="https://github.com/user-attachments/assets/a07b77e8-96f7-4e69-b8a8-294835c0d520" />
+
+Cuando pregunte "Do you want to distribute and activate the configuration across all system?" hacemos click en Yes:
+<img width="805" height="279" alt="image" src="https://github.com/user-attachments/assets/5fae7072-78ce-4587-b93a-7eafe3268c24" />
+
 Es importante elegir bien el target a la hora de crear las órdenes o se harán como "Local Change Requests" y no se pasarán al otro cliente.
 En caso de que el check diga "System <sid> has transport routes, but no standard layer for it" se puede ignorar.
+
+<img width="1065" height="183" alt="image" src="https://github.com/user-attachments/assets/f12e91d7-d578-433e-9105-ccbfaf6fdb2e" />
+
 
 ## Salir de transacción si no funciona la opción de detener transacción:
 
