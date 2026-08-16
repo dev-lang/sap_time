@@ -76,6 +76,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Explorar la base con DBeaver (alternativa visual tipo SSMS)](#explorar-la-base-con-dbeaver-alternativa-visual-tipo-ssms)
 - [TMS not configured for this SAP system](#tms-not-configured-for-this-sap-system)
 - [ASE Error SQL4002 - Login Failed](#sybadm-sql-error-4002-ase-error-sql4002login-failed)
+- [Crear Spool Printer (SPAD)](#crear-spool-printer)
 - [Referencias](#referencias)
 
 
@@ -1532,6 +1533,21 @@ En caso de que la configuración se haya vuelto inconsistente, por ejemplo tras 
 - Realizar el test y ver que diga "+++SYBADM established successfully"
 
 <img width="1811" height="288" alt="image" src="https://github.com/user-attachments/assets/389d3935-379a-4a34-9441-71a4ba5ae243" />
+
+## Crear Spool Printer
+
+- Ingresar a SPAD
+- Ingresar el nombre (por ejemplo: ZPDF)
+<img width="921" height="410" alt="image" src="https://github.com/user-attachments/assets/577e4611-082d-4db0-bec6-177dd2bbeaab" />
+
+- Presionar ENTER y presionar F8 para habilitar el modo change
+- Despues hacer click en Output Device > Create (Shift + F1)
+- Agregar los DeviceAttributes y Access Method
+<img width="921" height="410" alt="image" src="https://github.com/user-attachments/assets/9525f6ac-8fd8-4882-b671-2651b1d3c45a" />
+<img width="921" height="410" alt="image" src="https://github.com/user-attachments/assets/b2fd3722-c8da-47cd-986c-1356c4ee6a27" />
+
+- Guardar (Ctrl+S)
+<img width="1172" height="279" alt="image" src="https://github.com/user-attachments/assets/e04eb3aa-5b27-48c2-933d-83265f8bdab7" />
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
