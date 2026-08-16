@@ -75,6 +75,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [Migración de esquema y datos con SSMA (Sybase → SQL Server)](#migración-de-esquema-y-datos-con-ssma-sybase--sql-server)
 - [Explorar la base con DBeaver (alternativa visual tipo SSMS)](#explorar-la-base-con-dbeaver-alternativa-visual-tipo-ssms)
 - [TMS not configured for this SAP system](#tms-not-configured-for-this-sap-system)
+- [ASE Error SQL4002 - Login Failed](#sybadm-sql-error-4002-ase-error-sql4002login-failed)
 - [Referencias](#referencias)
 
 
@@ -1521,6 +1522,16 @@ En caso de que la configuración se haya vuelto inconsistente, por ejemplo tras 
 <img width="841" height="541" alt="image" src="https://github.com/user-attachments/assets/c714e2bb-05cc-4c20-aa69-6f8129a84cd5" />
 
 - Despues se debe configurar la ruta de transporte, ver [STMS Configurar Ruta de Transporte Local entre Clientes 000 y 001](#stms-configurar-ruta-de-transporte-local-entre-clientes-000-y-001)
+
+## +++SYBADM: SQL error 4002 [ASE Error SQL4002]Login Failed.
+
+<img width="922" height="296" alt="image" src="https://github.com/user-attachments/assets/7d57d615-7480-43a5-9d02-a1b8be806977" />
+
+- Ingresar a DBACOCKPIT
+- Cambiar el password al último que se haya configurado.
+- Realizar el test y ver que diga "+++SYBADM established successfully"
+
+<img width="1811" height="288" alt="image" src="https://github.com/user-attachments/assets/389d3935-379a-4a34-9441-71a4ba5ae243" />
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
