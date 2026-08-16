@@ -77,6 +77,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [TMS not configured for this SAP system](#tms-not-configured-for-this-sap-system)
 - [ASE Error SQL4002 - Login Failed](#sybadm-sql-error-4002-ase-error-sql4002login-failed)
 - [Crear Spool Printer (SPAD)](#crear-spool-printer)
+- [Local logical system is not defined](#local-logical-system-is-not-defined)
 - [Referencias](#referencias)
 
 
@@ -1548,6 +1549,28 @@ En caso de que la configuración se haya vuelto inconsistente, por ejemplo tras 
 
 - Guardar (Ctrl+S)
 <img width="1172" height="279" alt="image" src="https://github.com/user-attachments/assets/e04eb3aa-5b27-48c2-933d-83265f8bdab7" />
+
+## Local logical system is not defined
+
+Al copiar una sociedad por EC01, puede salir el error "Local logical system is not defined"
+<img width="895" height="348" alt="image" src="https://github.com/user-attachments/assets/d5ad1055-0c02-4d32-9331-d1aa8ed7e03b" />
+
+Si continuamos, va a salir el mensaje de error: "The activity for Company code 0001 was cancelled"
+
+- Comprobar por SCC4 que exista un Logical System en el cliente
+<img width="805" height="310" alt="image" src="https://github.com/user-attachments/assets/21ef20dc-ee18-4793-9729-bc860ab615dc" />
+
+- Si no está definida, ingresar a BD54, hacer click en New Entries
+<img width="805" height="310" alt="image" src="https://github.com/user-attachments/assets/8af43d99-98f6-4e86-97c2-f4f49fef8266" />
+
+- Escribir BASCLNT001 y de nombre poner "Logical System BAS001"
+<img width="805" height="310" alt="image" src="https://github.com/user-attachments/assets/a0df4431-71e7-47ce-a83e-ab2f73593beb" />
+
+- Guardar los cambios y volver a SCC4
+- Editar el cliente y definir el Logical System que acabamos de crear
+<img width="1038" height="336" alt="image" src="https://github.com/user-attachments/assets/157e2ca0-ba52-4389-a126-a2c1f1566db6" />
+
+- Volver a probar la acción que falló anteriormente (en este caso, copiar una sociedad por EC01)
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
