@@ -66,6 +66,33 @@ Verificar con `ping sapzrv.lab.local`: tiene que responder 192.168.1.12.
 
 **Verificar:** SMICM → Goto → Parameters → Display → `icm/host_name_full = sapzrv.lab.local`.
 
+**1d. Equipos cliente: emulación de IE en SAP GUI**
+
+Si en otra PC DBACOCKPIT muestra el login de NetWeaver con *"You are calling this Web site with a browser that is not supported"* (aunque en el servidor ande), revisar el registro de esa PC:
+
+```
+reg query "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION"
+```
+
+Si aparecen `SAPLOGON.exe`, `SAPLGPAD.exe`, `SAPGUI.exe` y `SAPGUISERVER.exe` con `0x2af9` (11001 = IE11 en modo estándar), SAP GUI se identifica como IE11 y NetWeaver 7.31 no lo reconoce. En el servidor esas entradas no existen: el control usa la emulación por defecto (IE7, con "MSIE") y funciona.
+
+Solución, en una consola **como administrador**:
+
+```
+reg export "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION" C:\backup_browser_emulation.reg
+reg delete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION" /v SAPLOGON.exe /f
+reg delete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION" /v SAPLGPAD.exe /f
+reg delete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION" /v SAPGUI.exe /f
+reg delete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION" /v SAPGUISERVER.exe /f
+```
+
+Después, cerrar SAP Logon por completo y volver a abrirlo.
+
+- Sin consola de administrador, `reg export` a `C:\` falla con "No se puede escribir en el archivo".
+- Reinstalar o actualizar SAP GUI puede volver a crear estas entradas.
+- En SAP GUI → Opciones → Diseño interactivo → Parametrizaciones de control, **Control de navegador** tiene que estar en **Internet Explorer**, no en Edge/Chromium.
+- Para volver atrás: doble clic en el `.reg` del backup.
+
 ### Paso 2 – Servicios SICF (los 9 nodos)
 
 En SICF, filtrar por la ruta `/sap/public`, expandir `bc` y, en cada nodo, clic derecho → **Activate Service → Yes**:
