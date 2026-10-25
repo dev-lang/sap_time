@@ -78,6 +78,7 @@ Usar las instrucciones solamente como referencia en pruebas iniciales pero crear
 - [ASE Error SQL4002 - Login Failed](#sybadm-sql-error-4002-ase-error-sql4002login-failed)
 - [Crear Spool Printer (SPAD)](#crear-spool-printer)
 - [Local logical system is not defined](#local-logical-system-is-not-defined)
+- [STMS - Transport Organizer Web UI Error 403 (CTS_BROWSER)](#stms---transport-organizer-web-ui-error-403-cts_browser)
 - [Referencias](#referencias)
 
 
@@ -1571,6 +1572,53 @@ Si continuamos, va a salir el mensaje de error: "The activity for Company code 0
 <img width="1038" height="336" alt="image" src="https://github.com/user-attachments/assets/157e2ca0-ba52-4389-a126-a2c1f1566db6" />
 
 - Volver a probar la acción que falló anteriormente (en este caso, copiar una sociedad por EC01)
+
+## STMS - Transport Organizer Web UI Error 403 (CTS_BROWSER)
+
+Al abrir el Transport Organizer Web UI desde STMS, el navegador muestra el siguiente error:
+
+```
+Service cannot be reached
+URL call was terminated because the corresponding service is not available.
+The termination occurred in system with error code 403 and for the reason Forbidden.
+```
+
+El 403 indica que el nodo existe en SICF pero se encuentra **inactivo** (si no existiera, devolvería 404). Para identificar el servicio, copiar la URL que abre el navegador. En SAP 7.31 es:
+
+```
+/sap/bc/webdynpro/sap/cts_browser
+```
+
+### Solución
+
+Por medio de la transacción SICF:
+
+```
+Tipo de jerarquía: SERVICE
+Nombre de servicio: CTS_BROWSER
+```
+
+Ejecutar, hacer click derecho sobre `cts_browser` > **Activar servicio** > **Sí** (activa también los subnodos).
+
+Verificar que toda la ruta esté activa (ningún nodo en gris), ya que si un nodo padre está inactivo también devuelve 403:
+
+```
+default_host > sap > bc > webdynpro > sap > cts_browser
+```
+
+En caso de que la aplicación abra en blanco o con errores visuales, activar también los servicios públicos de Web Dynpro (ver [Error 403 web dynpros](#error-403-web-dynpros)):
+
+```
+/sap/public/bc/ur
+/sap/public/bc/webdynpro
+/sap/public/bc/icons
+/sap/public/bc/icons_rtl
+/sap/public/bc/webicons
+/sap/public/bc/pictograms
+/sap/public/myssocntl
+```
+
+**NOTA:** El mismo procedimiento aplica a cualquier Web Dynpro que devuelva 403: tomar la ruta de la URL y activar el nodo correspondiente en SICF.
 
 ## Referencias:
 https://abapacademy.com/blog/category/how-to-install-free-sap/sap-nw-as-750-installation/
